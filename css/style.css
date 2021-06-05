@@ -10,3 +10,28 @@ footer {
 .form {
     display: block;
 }
+
+.welcome{
+    margin-left: 0;
+}
+
+.round {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: 3px black solid;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.top{
+    text-align: center;
+}
+
+.vertical{
+    text-align: center;
+}
+
+.left{
+    margin-right: 163px;
+}

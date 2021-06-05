@@ -10,8 +10,29 @@ $page_title = 'Mens Erger Je Niet';
 include __DIR__ . '/tpl/head.php';
 include __DIR__ . '/tpl/body_start.php';
 ?>
-<h1> Welcome! </h1>
-<button class="btn btn-primary">Reset Player</button>
-<?php
-include __DIR__ . '/tpl/body_end.php';
-?>
+<div class="welcome">
+    <h1> Welcome! </h1>
+    <button class="btn btn-warning">Reset Player</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="top"> <!-- This is the top row -->
+    <button class="round"></button>
+    <button class="round"></button>
+    <button class="round"></button>
+    <button class="round"></button>
+    <button class="round blue"></button>
+</div>
+
+<div class="vertical">
+    <button class="round left"></button>
+    <button class="round right"></button>
+</div>
+
+<div class="vertical">
+    <button class="round left"></button>
+    <button class="round right"></button>
+</div>
+
