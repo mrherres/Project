@@ -13,6 +13,11 @@ include __DIR__ . '/tpl/body_start.php';
 <div class="welcome">
     <h1> Welcome! </h1>
     <button class="btn btn-warning">Reset Player</button>
+    <h2> Current players are:</h2>
+    <ol>
+        <li id="player1Name"></li>
+        <li id="player2Name"></li>
+    </ol>
 </div>
 </div>
 </div>
