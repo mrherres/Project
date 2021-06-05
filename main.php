@@ -27,12 +27,35 @@ include __DIR__ . '/tpl/body_start.php';
 </div>
 
 <div class="vertical">
-    <button class="round left"></button>
+    <button class="round divide"></button>
     <button class="round right"></button>
 </div>
 
 <div class="vertical">
-    <button class="round left"></button>
+    <button class="round divide"></button>
     <button class="round right"></button>
+</div>
+
+<div class="vertical">
+    <button class="round divide"></button>
+    <button class="round right"></button>
+</div>
+
+<div class="middle">
+    <button class="round"></button>
+    <button class="round"></button>
+    <button class="round"></button>
+    <button class="round"></button>
+    <button class="round divide"></button>
+    <button class="round"></button>
+    <button class="round"></button>
+    <button class="round"></button>
+    <button class="round"></button>
+    <button class="round"></button>
+</div>
+
+<div class="vertical">
+    <button class="round split"></button>
+    <button class="round"></button>
 </div>
 

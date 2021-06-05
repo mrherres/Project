@@ -32,6 +32,14 @@ footer {
     text-align: center;
 }
 
-.left{
+.middle{
+    text-align: center;
+}
+
+.divide{
     margin-right: 163px;
+}
+
+.split{
+    margin-right: 600px;
 }
