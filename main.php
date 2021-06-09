@@ -14,20 +14,10 @@ include __DIR__ . '/tpl/body_start.php';
     <h1> Welcome! </h1>
     <button class="btn btn-warning">Reset Player</button>
     <h2> Current players are:</h2>
-    <table class="table">
-        <tr>
-            <th>Player</th>
-            <th>Status</th>
-        </tr>
-        <tr>
-            <td id="player1Name"></td>
-            <td id="status1"><button class="btn btn-danger" disabled>Not Ready</button></td>
-        </tr>
-        <tr>
-            <td id="player2Name"></td>
-            <td id="status2"><button class="btn btn-danger" disabled>Not Ready</button></td>
-        </tr>
-    </table>
+    <ol>
+        <li id="player1Name"></li>
+        <li id="player2Name"></li>
+    </ol>
 </div>
 </div>
 </div>
