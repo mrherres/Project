@@ -9,6 +9,7 @@ $page_title = 'Mens Erger Je Niet';
 #);
 include __DIR__ . '/tpl/head.php';
 include __DIR__ . '/tpl/body_start.php';
+$getName = $_GET['name'];
 ?>
 <div class="welcome">
     <h1> Welcome! </h1>
@@ -21,11 +22,11 @@ include __DIR__ . '/tpl/body_start.php';
         </tr>
         <tr>
             <td id="player1Name"></td>
-            <td id="status1"><button class="btn btn-danger" disabled>Not Ready</button></td>
+            <td id="status1"></td>
         </tr>
         <tr>
             <td id="player2Name"></td>
-            <td id="status2"><button class="btn btn-danger" disabled>Not Ready</button></td>
+            <td id="status2"></td>
         </tr>
     </table>
 </div>

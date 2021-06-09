@@ -13,6 +13,7 @@ include __DIR__ . '/tpl/body_start.php';
 <?php
     if (isset($_GET["name"])){
         if($_GET["name"] != ""){
+            session_start();
             #echo "<h1>Welcome " . $_GET["name"] . "!</h1>";
             $player_name = $_GET["name"];
             $checkFile = file_get_contents("data/players.json");
@@ -31,12 +32,12 @@ include __DIR__ . '/tpl/body_start.php';
                 $json_object = json_encode($data);
                 file_put_contents('data/players.json', $json_object);
             }
-            header('Location: main.php');
+            header('Location: main.php?name='.$player_name);
     }
 }
 ?>
     <h1>Please enter your name</h1>
-    <form name="myForm" id="form" action="simple_form.php" method="GET" novalidate>
+    <form name="myForm" id="form" action="simple_form.php" method="get" novalidate>
         <label for="name">Name</label>
         <input class="form-control" type="text" id="name" name="name" placeholder="Jan Jansen" required>
         <button class="btn btn-primary" type="submit">Submit</button>
