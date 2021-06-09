@@ -24,6 +24,51 @@ footer {
     border-radius: 50%;
 }
 
+.round_blue {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    border: 3px black solid;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.round_red {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border: 3px black solid;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.round_yellow {
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    border: 3px black solid;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.round_green {
+    width: 50px;
+    height: 50px;
+    background-color: green;
+    border: 3px black solid;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.round_inv {
+    width: 50px;
+    height: 50px;
+    border: 3px black solid;
+    background-color: red;
+    border-radius: 50%;
+    visibility: hidden;
+}
+
 .top{
     text-align: center;
 }
