@@ -14,20 +14,22 @@ include __DIR__ . '/tpl/body_start.php';
     if (isset($_GET["name"])){
         if($_GET["name"] != ""){
             #echo "<h1>Welcome " . $_GET["name"] . "!</h1>";
-            $player->name = $_GET["name"];
-            $player->wins = 0;
-            $playerJSON = json_encode($player);
-            $checkFile = file_get_contents("data/player1.json");
+            $player_name = $_GET["name"];
+            $checkFile = file_get_contents("data/players.json");
             $check = json_decode($checkFile, true);
-            if($check == ""){
-                $json_file = fopen('data/player1.json', 'w');
-                fwrite($json_file, $playerJSON);
-                fclose($json_file);
+            if($check["player1"]["name"] == ""){
+                $json_file = file_get_contents('data/players.json');
+                $data = json_decode($json_file, true);
+                $data['player1']['name'] = $player_name;
+                $json_object = json_encode($data);
+                file_put_contents('data/players.json', $json_object);
             }
             else{
-                $json_file = fopen('data/player2.json', 'w');
-                fwrite($json_file, $playerJSON);
-                fclose($json_file);
+                $json_file = file_get_contents('data/players.json');
+                $data = json_decode($json_file, true);
+                $data['player2']['name'] = $player_name;
+                $json_object = json_encode($data);
+                file_put_contents('data/players.json', $json_object);
             }
             header('Location: main.php');
     }

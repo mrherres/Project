@@ -1,8 +1,8 @@
 (function worker1() {
     $.ajax({
-        url: 'data/player1.json',
+        url: 'data/players.json',
         success: function(data) {
-            $('#player1Name').html(data["name"]);
+            $('#player1Name').html(data["player1"].name);
         },
         error: function() {
             $('#player1Name').html("Not Available");
@@ -16,9 +16,9 @@
 
 (function worker2() {
     $.ajax({
-        url: 'data/player2.json',
+        url: 'data/players.json',
         success: function(data) {
-            $('#player2Name').html(data["name"]);
+            $('#player2Name').html(data["player2"].name);
         },
         error: function() {
             $('#player2Name').html("Not Available");
