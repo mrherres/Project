@@ -33,44 +33,156 @@ include __DIR__ . '/tpl/body_start.php';
 </div>
 </div>
 
-<div class="top"> <!-- This is the top row -->
+<div class="top">
+    <button class="round_blue"></button>
+    <button class="round_blue"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
     <button class="round"></button>
     <button class="round"></button>
-    <button class="round"></button>
-    <button class="round"></button>
-    <button class="round blue"></button>
+    <button class="round_green"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_green"></button>
+    <button class="round_green"></button>
 </div>
 
-<div class="vertical">
-    <button class="round divide"></button>
-    <button class="round right"></button>
+<div class="top">
+    <button class="round_blue"></button>
+    <button class="round_blue"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round"></button>
+    <button class="round_green"></button>
+    <button class="round"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_green"></button>
+    <button class="round_green"></button>
 </div>
 
-<div class="vertical">
-    <button class="round divide"></button>
-    <button class="round right"></button>
+<div class="top">
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round"></button>
+    <button class="round_green"></button>
+    <button class="round"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
 </div>
 
-<div class="vertical">
-    <button class="round divide"></button>
-    <button class="round right"></button>
+<div class="top">
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round"></button>
+    <button class="round_green"></button>
+    <button class="round"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
 </div>
 
-<div class="middle">
+<div class="top">
+    <button class="round_blue"></button>
     <button class="round"></button>
     <button class="round"></button>
     <button class="round"></button>
     <button class="round"></button>
-    <button class="round divide"></button>
+    <button class="round_green"></button>
     <button class="round"></button>
     <button class="round"></button>
     <button class="round"></button>
     <button class="round"></button>
-    <button class="round"></button>
-</div>
-
-<div class="vertical">
-    <button class="round split"></button>
     <button class="round"></button>
 </div>
 
+<div class="top">
+    <button class="round"></button>
+    <button class="round_blue"></button>
+    <button class="round_blue"></button>
+    <button class="round_blue"></button>
+    <button class="round_blue"></button>
+    <button class="round_inv"></button>
+    <button class="round_yellow"></button>
+    <button class="round_yellow"></button>
+    <button class="round_yellow"></button>
+    <button class="round_yellow"></button>
+    <button class="round"></button>
+</div>
+
+<div class="top">
+    <button class="round"></button>
+    <button class="round"></button>
+    <button class="round"></button>
+    <button class="round"></button>
+    <button class="round"></button>
+    <button class="round_red"></button>
+    <button class="round"></button>
+    <button class="round"></button>
+    <button class="round"></button>
+    <button class="round"></button>
+    <button class="round_yellow"></button>
+</div>
+
+<div class="top">
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round"></button>
+    <button class="round_red"></button>
+    <button class="round"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+</div>
+
+<div class="top">
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round"></button>
+    <button class="round_red"></button>
+    <button class="round"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+</div>
+
+<div class="top">
+    <button class="round_red"></button>
+    <button class="round_red"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round"></button>
+    <button class="round_red"></button>
+    <button class="round"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_yellow"></button>
+    <button class="round_yellow"></button>
+</div>
+
+<div class="top">
+    <button class="round_red"></button>
+    <button class="round_red"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_red"></button>
+    <button class="round"></button>
+    <button class="round"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_yellow"></button>
+    <button class="round_yellow"></button>
+</div>
