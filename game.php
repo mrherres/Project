@@ -15,6 +15,13 @@ $getName = $_GET['name'];
 </div>
 </div>
 
+<div id="dice-roll">
+    <input type="button" id="dice" value="Click Dice to Roll">
+    <div id="dice-result">
+        Roll the dice!
+    </div>
+</div>
+
 <div class="top">
     <button class="round_blue" id="home_1">h1</button>
     <button class="round_blue" id="home_2">h2</button>
