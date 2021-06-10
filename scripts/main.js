@@ -87,8 +87,11 @@
     $.ajax({
         url: 'data/players.json',
         success: function(data) {
+            const abba = window.location.search;
+            const urlParams = new URLSearchParams(abba);
+            const pname = urlParams.get('name')
             if(data["player1"].status === "ready" && data["player2"].status === "ready"){
-               document.location.href = "http://localhost/Project/game.php";
+               document.location.href = "http://localhost/Project/game.php?name=" + pname;
             }
         },
         error: function() {
@@ -100,7 +103,3 @@
         }
     });
 })();
-
-function movePawn(id) {
-    $("#38").addClass("round_green");
-}
