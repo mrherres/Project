@@ -22,7 +22,7 @@
             //console.log($('#player2Name').text());
         },
         error: function() {
-            $('#player2Name').html("Not Available");
+            $('#player2Name').html("Waiting for player");
         },
         complete: function() {
             // Schedule the next request when the current one's complete
@@ -82,3 +82,25 @@
         }
     });
 })();
+
+(function worker4() {
+    $.ajax({
+        url: 'data/players.json',
+        success: function(data) {
+            if(data["player1"].status === "ready" && data["player2"].status === "ready"){
+               document.location.href = "http://localhost/Project/game.php";
+            }
+        },
+        error: function() {
+            $('#player2Name').html("Not Available");
+        },
+        complete: function() {
+            // Schedule the next request when the current one's complete
+            setTimeout(worker4, 1000);
+        }
+    });
+})();
+
+function movePawn(id) {
+    $("#38").addClass("round_green");
+}

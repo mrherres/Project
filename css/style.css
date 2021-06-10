@@ -88,3 +88,10 @@ footer {
 .split{
     margin-right: 600px;
 }
+
+.sendit{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 0;
+}
