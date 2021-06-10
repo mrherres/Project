@@ -96,7 +96,7 @@ footer {
     width: 0;
 }
 
-#dice-result {
+#dice-text {
     margin-top: 10px;
     font-weight: bold;
     font-size: 18px;
@@ -108,10 +108,11 @@ footer {
 }
 
 #dice {
-    background-color: darkblue;
+    font-weight: bold;
+    background-image: url('../img/dice6.png');
     color: #000000;
-    width: 150px;
-    height: 100px;
+    width: 112px;
+    height: 112px;
     text-align: center;
     display: inline-block;
     font-size: 16px;
