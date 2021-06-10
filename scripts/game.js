@@ -1,3 +1,5 @@
 function movePawn(id) {
-    $("#p"+id).addClass("round_green");
+    if($("#p"+id).hasClass("pawn")){
+        $("#p"+id).addClass("round_green");
+    }
 }

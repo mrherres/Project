@@ -1,6 +1,7 @@
 {
   "information": {
-    "status": "waiting"
+    "status": "waiting",
+    "turn" : ""
   },
   "field": {
     "p1": "empty",
