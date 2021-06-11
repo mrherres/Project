@@ -30,7 +30,7 @@ $getName = $_GET['name'];
         </tr>
     </table>
     <div>
-        <form action="move.php" method="post"><input type="submit" class="btn btn-success" value="Set Move"/></form>
+        <form action="spawn.php" method="post"><input type="submit" class="btn btn-success" value="Set Move"/></form>
     </div>
 </div>
 </div>

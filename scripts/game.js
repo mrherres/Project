@@ -16,7 +16,7 @@ $(function() {
         if(dice_result === 6){
             // Hier moet iets komen van, wil je een nieuwe pion opzetten
             let request = $.ajax({
-                url: "http://localhost/Project/move.php",
+                url: "http://localhost/Project/spawn.php",
                 method: "POST",
                 data: {
                     "rolled" : dice_result,
@@ -24,9 +24,29 @@ $(function() {
                 },
                 dataType: "json"
             });
-            //request.done(function(data){
-                //console.log(data);
-            //});
+            request.done(function(data){
+                console.log(data);
+            });
+        }
+        else{
+            let PosB = $(".round_blue.pawn.inPlay").attr("id");
+            let PosG = $(".round_green.pawn").attr("id");
+            let currentPosB = PosB.substring(1);
+            let currentPosG = PosG[1] + PosG[2];
+            let request = $.ajax({
+                url: "http://localhost/Project/move.php",
+                method: "POST",
+                data: {
+                    "rolled" : dice_result,
+                    "name" : pname,
+                    "posB" : currentPosB,
+                    "posG" : currentPosG
+                },
+                dataType: "json"
+            });
+            request.done(function(data){
+                console.log(data);
+            });
         }
     });
 });
@@ -35,8 +55,17 @@ $(function() {
     $.ajax({
         url: 'data/gamestate.json',
         success: function(data) {
-            if(data["field"].p31 === "blue"){
-                $("#p31").html("").addClass("round_blue pawn");
+            //let i;
+            for (let i in data["field"]) {
+                let item = data["field"][i];
+                //console.log(item);
+                if (item === "blue") {
+                    //console.log(item[2]);
+                    $("#"+i).addClass("round_blue pawn inPlay");
+                }
+                else if(item === "empty") {
+                    $("#"+i).removeClass("round_blue pawn inPlay");
+                }
             }
 
         },

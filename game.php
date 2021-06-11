@@ -23,8 +23,8 @@ $getName = $_GET['name'];
 </div>
 
 <div class="top">
-    <button class="round_blue" id="home_1">h1</button>
-    <button class="round_blue" id="home_2">h2</button>
+    <button class="round_blue pawn" id="home_1">h1</button>
+    <button class="round_blue pawn" id="home_2">h2</button>
     <button class="round_inv"></button>
     <button class="round_inv"></button>
     <button class="round" onclick="movePawn(39)" id="p39">p39</button>
@@ -32,7 +32,7 @@ $getName = $_GET['name'];
     <button class="round_green" id="p1">p1</button>
     <button class="round_inv"></button>
     <button class="round_inv"></button>
-    <button class="round_green" id="home_5">h5</button>
+    <button class="round_green pawn" id="home_5">h5</button>
     <button class="round_green" id="home_6">h6</button>
 </div>
 
@@ -79,7 +79,7 @@ $getName = $_GET['name'];
 </div>
 
 <div class="top">
-    <button class="round_blue" onclick="movePawn(31)" id="p31">p31</button>
+    <button class="static_blue" onclick="movePawn(31)" id="p31">p31</button>
     <button class="round" onclick="movePawn(32)" id="p32">p32</button>
     <button class="round" onclick="movePawn(33)" id="p33">p33</button>
     <button class="round" onclick="movePawn(34)" id="p34">p34</button>
