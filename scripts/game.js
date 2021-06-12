@@ -32,7 +32,7 @@ $(function() {
         else {
             let PosB = $(".round_blue.pawn.inPlay").attr("id");
             let PosG = $(".round_green.pawn.inPlay").attr("id");
-            if (PosB === undefined && pturn === "1") {
+            if ((PosB === undefined && pturn === "1") || (PosG === undefined && pturn === "2")) {
                 console.log("You need a 6 sit1! " + pturn);
                 let request = $.ajax({
                     url: "http://localhost/Project/notSix.php"
@@ -41,7 +41,7 @@ $(function() {
                     console.log("Fired the php!");
                 });
             }
-            else if(PosB === undefined && pturn ==="2"){
+            else if(pturn ==="2"){
                 let currentPosB = "00";
                 let currentPosG = PosG.substring(1);
                 let request = $.ajax({
@@ -59,16 +59,7 @@ $(function() {
                     console.log(data);
                 });
             }
-            else if (PosG === undefined && pturn === "2") {
-                console.log("You need a 6sit2! " + pturn);
-                let request = $.ajax({
-                    url: "http://localhost/Project/notSix.php"
-                });
-                request.done(function(){
-                    console.log("Fired the php!");
-                });
-            }
-            else if(PosG === undefined && pturn ==="1"){
+            else if(pturn ==="1"){
                 let currentPosB = PosB.substring(1);
                 let currentPosG = "00";
                 let request = $.ajax({
