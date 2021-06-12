@@ -1,15 +1,16 @@
-function movePawn(id) {
-    if($("#p"+id).hasClass("pawn")){
-        $("#p"+id).addClass("round_green");
-    }
-}
+//function movePawn(id) {
+  //  if($("#p"+id).hasClass("pawn")){
+    //    $("#p"+id).addClass("round_green");
+    //}
+//}
 
 $(function() {
 
     $('#dice').click(function () {
         const abba = window.location.search;
         const urlParams = new URLSearchParams(abba);
-        const pname = urlParams.get('name')
+        const pname = urlParams.get('name');
+        const pturn = urlParams.get('turn');
         var dice_result = Math.floor(Math.random() * 6)+1;
         $('#dice').attr('src', "img/dice" + dice_result + ".png")
         $("#dice-text").html("You rolled: " + dice_result);
@@ -30,18 +31,64 @@ $(function() {
         }
         else {
             let PosB = $(".round_blue.pawn.inPlay").attr("id");
-            let PosG = $(".round_green.pawn").attr("id");
-            if (PosB === undefined) {
-                console.log("You need a 6!");
+            let PosG = $(".round_green.pawn.inPlay").attr("id");
+            if (PosB === undefined && pturn === "1") {
+                console.log("You need a 6 sit1! " + pturn);
                 let request = $.ajax({
                     url: "http://localhost/Project/notSix.php"
                 });
                 request.done(function(){
                     console.log("Fired the php!");
                 });
-            } else {
+            }
+            else if(PosB === undefined && pturn ==="2"){
+                let currentPosB = "00";
+                let currentPosG = PosG.substring(1);
+                let request = $.ajax({
+                    url: "http://localhost/Project/move.php",
+                    method: "POST",
+                    data: {
+                        "rolled": dice_result,
+                        "name": pname,
+                        "posB": currentPosB,
+                        "posG": currentPosG
+                    },
+                    dataType: "json"
+                });
+                request.done(function (data) {
+                    console.log(data);
+                });
+            }
+            else if (PosG === undefined && pturn === "2") {
+                console.log("You need a 6sit2! " + pturn);
+                let request = $.ajax({
+                    url: "http://localhost/Project/notSix.php"
+                });
+                request.done(function(){
+                    console.log("Fired the php!");
+                });
+            }
+            else if(PosG === undefined && pturn ==="1"){
                 let currentPosB = PosB.substring(1);
-                let currentPosG = PosG[1] + PosG[2];
+                let currentPosG = "00";
+                let request = $.ajax({
+                    url: "http://localhost/Project/move.php",
+                    method: "POST",
+                    data: {
+                        "rolled": dice_result,
+                        "name": pname,
+                        "posB": currentPosB,
+                        "posG": currentPosG
+                    },
+                    dataType: "json"
+                });
+                request.done(function (data) {
+                    console.log(data);
+                });
+            }
+            else {
+                let currentPosB = PosB.substring(1);
+                let currentPosG = PosG.substring(1);
                 let request = $.ajax({
                     url: "http://localhost/Project/move.php",
                     method: "POST",
@@ -71,10 +118,16 @@ $(function() {
                 //console.log(item);
                 if (item === "blue") {
                     //console.log(item[2]);
+                    // Als hier nog een removeclass komt voor groen etc, en bij de andere else statements
+                    // Dan verdwijnen pionnen al als een soort van "eraf gooien"
+                    // Sinds de positie hetzelde is
                     $("#"+i).addClass("round_blue pawn inPlay");
                 }
                 else if(item === "empty") {
-                    $("#"+i).removeClass("round_blue pawn inPlay");
+                    $("#"+i).removeClass("round_blue round_green pawn inPlay");
+                }
+                else{
+                    $("#"+i).addClass("round_green pawn inPlay")
                 }
             }
             const abba = window.location.search;
@@ -82,11 +135,11 @@ $(function() {
             const pturn = urlParams.get('turn')
             if (data['information'].status === pturn) {
                 $("#dice").css("display", "inline");
-                $("#dice-text").css("display", "inline");
+                //$("#dice-text").css("display", "inline");
             }
             else{
                 $("#dice").hide();
-                $("#dice-text").hide();
+                //$("#dice-text").hide();
             }
         },
         complete: function() {

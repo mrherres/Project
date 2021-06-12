@@ -13,11 +13,11 @@ if($check["player1"]["name"] === $_POST["name"]){
     $check2["field"]["p".$POSB] = "empty";
     $check2["field"]["p".$NEXT] = "blue";
 
-    if($check2["information"]["status"] === 1){
-        $check2["information"]["status"] = 2;
+    if($check2["information"]["status"] === "1"){
+        $check2["information"]["status"] = "2";
     }
     else{
-        $check2["information"]["status"] = 1;
+        $check2["information"]["status"] = "1";
     }
 
     $json_object = json_encode($check2);
@@ -40,11 +40,11 @@ else{
     $check2["field"]["p".$POSG] = "empty";
     $check2["field"]["p".$NEXT] = "green";
 
-    if($check2["information"]["status"] === 1){
-        $check2["information"]["status"] = 2;
+    if($check2["information"]["status"] === "1"){
+        $check2["information"]["status"] = "2";
     }
     else{
-        $check2["information"]["status"] = 1;
+        $check2["information"]["status"] = "1";
     }
 
     $json_object = json_encode($check2);
