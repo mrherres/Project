@@ -29,9 +29,9 @@ $getName = $_GET['name'];
             <td id="status2"></td>
         </tr>
     </table>
-    <div>
+    <!--<div>
         <form action="spawn.php" method="post"><input type="submit" class="btn btn-success" value="Set Move"/></form>
-    </div>
+    </div> -->
 </div>
 </div>
 </div>

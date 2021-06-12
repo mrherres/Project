@@ -28,25 +28,35 @@ $(function() {
                 console.log(data);
             });
         }
-        else{
+        else {
             let PosB = $(".round_blue.pawn.inPlay").attr("id");
             let PosG = $(".round_green.pawn").attr("id");
-            let currentPosB = PosB.substring(1);
-            let currentPosG = PosG[1] + PosG[2];
-            let request = $.ajax({
-                url: "http://localhost/Project/move.php",
-                method: "POST",
-                data: {
-                    "rolled" : dice_result,
-                    "name" : pname,
-                    "posB" : currentPosB,
-                    "posG" : currentPosG
-                },
-                dataType: "json"
-            });
-            request.done(function(data){
-                console.log(data);
-            });
+            if (PosB === undefined) {
+                console.log("You need a 6!");
+                let request = $.ajax({
+                    url: "http://localhost/Project/notSix.php"
+                });
+                request.done(function(){
+                    console.log("Fired the php!");
+                });
+            } else {
+                let currentPosB = PosB.substring(1);
+                let currentPosG = PosG[1] + PosG[2];
+                let request = $.ajax({
+                    url: "http://localhost/Project/move.php",
+                    method: "POST",
+                    data: {
+                        "rolled": dice_result,
+                        "name": pname,
+                        "posB": currentPosB,
+                        "posG": currentPosG
+                    },
+                    dataType: "json"
+                });
+                request.done(function (data) {
+                    console.log(data);
+                });
+            }
         }
     });
 });
@@ -67,7 +77,17 @@ $(function() {
                     $("#"+i).removeClass("round_blue pawn inPlay");
                 }
             }
-
+            const abba = window.location.search;
+            const urlParams = new URLSearchParams(abba);
+            const pturn = urlParams.get('turn')
+            if (data['information'].status === pturn) {
+                $("#dice").css("display", "inline");
+                $("#dice-text").css("display", "inline");
+            }
+            else{
+                $("#dice").hide();
+                $("#dice-text").hide();
+            }
         },
         complete: function() {
             // Schedule the next request when the current one's complete

@@ -1,1 +1,1 @@
-{"player1":{"name":"Twan","wins":0,"status":"ready"},"player2":{"name":"Jan","wins":0,"status":"ready"}}
+{"player1":{"name":"Twan","wins":0,"status":"ready","turn":1},"player2":{"name":"Pietje","wins":0,"status":"ready","turn":2}}

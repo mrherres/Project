@@ -89,17 +89,17 @@
         success: function(data) {
             const abba = window.location.search;
             const urlParams = new URLSearchParams(abba);
-            const pname = urlParams.get('name')
+            const pname = urlParams.get('name');
             if(data["player1"].status === "ready" && data["player2"].status === "ready"){
-               document.location.href = "http://localhost/Project/game.php?name=" + pname;
+                if(data["player1"].name === pname){
+                    document.location.href = "http://localhost/Project/game.php?name=" + pname + "&turn=" + 1;
+                }
+                else{document.location.href = "http://localhost/Project/game.php?name=" + pname + "&turn=" + 2;}
             }
-        },
-        error: function() {
-            $('#player2Name').html("Not Available");
         },
         complete: function() {
             // Schedule the next request when the current one's complete
-            setTimeout(worker4, 1000);
+            setTimeout(worker4, 2000);
         }
     });
 })();
