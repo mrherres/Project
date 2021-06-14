@@ -257,10 +257,17 @@ $(function() {
 })();
 
 $(function worker4() {
+    // Denk dat dit zo moet werken
     let request = $.ajax({
         url: "http://localhost/Project/finish.php",
-    });
-    request.done(function(data){
-        console.log(data);
+        success: function () {
+            request.done(function (data) {
+                console.log(data);
+            })
+        },
+        complete: function () {
+            // Schedule the next request when the current one's complete
+            setTimeout(worker4, 3000);
+        }
     });
 })();

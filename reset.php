@@ -9,6 +9,8 @@ $check["player2"]["name"] = "";
 $check["player1"]["status"] = "unready";
 $check["player2"]["status"] = "unready";
 
+$check2["information"]["status"] = "1";
+
 $check2["finish"]["b1"] = "empty";
 $check2["finish"]["b2"] = "empty";
 $check2["finish"]["b3"] = "empty";
