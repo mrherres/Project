@@ -12,6 +12,7 @@ include __DIR__ . '/tpl/body_start.php';
 $getName = $_GET['name'];
 
 ?>
+
 <div class="welcome">
     <h1> Welcome! </h1>
     <button class="btn btn-warning">Reset Player</button>

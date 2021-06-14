@@ -11,6 +11,7 @@ include __DIR__ . '/tpl/headG.php';
 include __DIR__ . '/tpl/body_start.php';
 $getName = $_GET['name'];
 ?>
+
 </div>
 </div>
 </div>
