@@ -13,7 +13,7 @@ if($check["player1"]["name"] === $_POST["name"]){
     }
 }
 else if($check["player2"]["name"] === $_POST["name"]) {
-    if ($check2["pawns"]["blue"] < 4) {
+    if ($check2["pawns"]["green"] < 4) {
         $check2["field"]["p1"] = "green";
         $check2["pawns"]["green"] ++;
         $json_object = json_encode($check2);
