@@ -27,45 +27,31 @@ $getName = $_GET['name'];
 </div>
 
 <div class="top">
-    <button class="round_blue pawn" id="home_1">h1</button>
-    <button class="round_blue pawn" id="home_2">h2</button>
+    <button class="round_blue pawn" id="home_1"></button>
+    <button class="round_blue pawn" id="home_2"></button>
     <button class="round_inv"></button>
     <button class="round_inv"></button>
-    <button class="round finish_green" id="p39">p39</button>
-    <button class="round finish_green" id="p40">p40</button>
-    <button class="static_green" id="p1">p1</button>
+    <button class="round finish_green" id="p39"></button>
+    <button class="round finish_green" id="p40"></button>
+    <button class="static_green" id="p1"></button>
     <button class="round_inv"></button>
     <button class="round_inv"></button>
-    <button class="round_green pawn" id="home_5">h5</button>
-    <button class="round_green pawn" id="home_6">h6</button>
+    <button class="round_green pawn" id="home_5"></button>
+    <button class="round_green pawn" id="home_6"></button>
 </div>
 
 <div class="top">
-    <button class="round_blue pawn" id="home_3">h3</button>
-    <button class="round_blue pawn" id="home_4">h4</button>
+    <button class="round_blue pawn" id="home_3"></button>
+    <button class="round_blue pawn" id="home_4"></button>
     <button class="round_inv"></button>
     <button class="round_inv"></button>
-    <button class="round finish_green" id="p38">p38</button>
-    <button class="static_green" id="g1">f1</button>
-    <button class="round" id="p2">p2</button>
+    <button class="round finish_green" id="p38"></button>
+    <button class="static_green" id="g1"></button>
+    <button class="round" id="p2"></button>
     <button class="round_inv"></button>
     <button class="round_inv"></button>
-    <button class="round_green pawn" id="home_7">h7</button>
-    <button class="round_green pawn" id="home_8">h8</button>
-</div>
-
-<div class="top">
-    <button class="round_inv"></button>
-    <button class="round_inv"></button>
-    <button class="round_inv"></button>
-    <button class="round_inv"></button>
-    <button class="round" id="p37">p37</button>
-    <button class="static_green" id="g2">f2</button>
-    <button class="round" id="p3">p3</button>
-    <button class="round_inv"></button>
-    <button class="round_inv"></button>
-    <button class="round_inv"></button>
-    <button class="round_inv"></button>
+    <button class="round_green pawn" id="home_7"></button>
+    <button class="round_green pawn" id="home_8"></button>
 </div>
 
 <div class="top">
@@ -73,65 +59,9 @@ $getName = $_GET['name'];
     <button class="round_inv"></button>
     <button class="round_inv"></button>
     <button class="round_inv"></button>
-    <button class="round" id="p36">p36</button>
-    <button class="static_green" id="g3">f3</button>
-    <button class="round" id="p4">p4</button>
-    <button class="round_inv"></button>
-    <button class="round_inv"></button>
-    <button class="round_inv"></button>
-    <button class="round_inv"></button>
-</div>
-
-<div class="top">
-    <button class="static_blue" id="p31">p31</button>
-    <button class="round" id="p32">p32</button>
-    <button class="round" id="p33">p33</button>
-    <button class="round" id="p34">p34</button>
-    <button class="round" id="p35">p35</button>
-    <button class="static_green" id="g4">f4</button>
-    <button class="round" id="p5">p5</button>
-    <button class="round" id="p6">p6</button>
-    <button class="round" id="p7">p7</button>
-    <button class="round finish_yellow" id="p8">p8</button>
-    <button class="round finish_yellow" id="p9">p9</button>
-</div>
-
-<div class="top">
-    <button class="round finish_blue" id="p30">p30</button>
-    <button class="static_blue" id="b1">f1</button>
-    <button class="static_blue" id="b2">f2</button>
-    <button class="static_blue" id="b3">f3</button>
-    <button class="static_blue" id="b4">f4</button>
-    <button class="round_inv"></button>
-    <button class="static_yellow" id="y4">f4</button>
-    <button class="static_yellow" id="y3">f3</button>
-    <button class="static_yellow" id="y2">f2</button>
-    <button class="static_yellow" id="y1">f1</button>
-    <button class="round finish_yellow" id="p10">p10</button>
-</div>
-
-<div class="top">
-    <button class="round finish_blue" id="p29">p29</button>
-    <button class="round finish_blue" id="p28">p28</button>
-    <button class="round" id="p27">p27</button>
-    <button class="round" id="p26">p26</button>
-    <button class="round" id="p25">p25</button>
-    <button class="static_red" id="r4">f4</button>
-    <button class="round" id="p15">p15</button>
-    <button class="round" id="p14">p14</button>
-    <button class="round" id="p13">p13</button>
-    <button class="round" id="p12">p12</button>
-    <button class="static_yellow" id="p11">p11</button>
-</div>
-
-<div class="top">
-    <button class="round_inv"></button>
-    <button class="round_inv"></button>
-    <button class="round_inv"></button>
-    <button class="round_inv"></button>
-    <button class="round" id="p24">p24</button>
-    <button class="static_red" id="r3">f3</button>
-    <button class="round" id="p16">p16</button>
+    <button class="round" id="p37"></button>
+    <button class="static_green" id="g2"></button>
+    <button class="round" id="p3"></button>
     <button class="round_inv"></button>
     <button class="round_inv"></button>
     <button class="round_inv"></button>
@@ -143,9 +73,9 @@ $getName = $_GET['name'];
     <button class="round_inv"></button>
     <button class="round_inv"></button>
     <button class="round_inv"></button>
-    <button class="round" id="p23">p23</button>
-    <button class="static_red" id="r2">f2</button>
-    <button class="round" id="p17">p17</button>
+    <button class="round" id="p36"></button>
+    <button class="static_green" id="g3"></button>
+    <button class="round" id="p4"></button>
     <button class="round_inv"></button>
     <button class="round_inv"></button>
     <button class="round_inv"></button>
@@ -153,29 +83,99 @@ $getName = $_GET['name'];
 </div>
 
 <div class="top">
-    <button class="round_red" id="home_9">h9</button>
-    <button class="round_red" id="home_10">h10</button>
-    <button class="round_inv"></button>
-    <button class="round_inv"></button>
-    <button class="round" id="p22">p22</button>
-    <button class="static_red" id="r1">f1</button>
-    <button class="round finish_red" id="p18">p18</button>
-    <button class="round_inv"></button>
-    <button class="round_inv"></button>
-    <button class="round_yellow" id="home_13">h13</button>
-    <button class="round_yellow" id="home_14">h14</button>
+    <button class="static_blue" id="p31"></button>
+    <button class="round" id="p32"></button>
+    <button class="round" id="p33"></button>
+    <button class="round" id="p34"></button>
+    <button class="round" id="p35"></button>
+    <button class="static_green" id="g4"></button>
+    <button class="round" id="p5"></button>
+    <button class="round" id="p6"></button>
+    <button class="round" id="p7"></button>
+    <button class="round finish_yellow" id="p8"></button>
+    <button class="round finish_yellow" id="p9"></button>
 </div>
 
 <div class="top">
-    <button class="round_red" id="home_11">h11</button>
-    <button class="round_red" id="home_12">h12</button>
+    <button class="round finish_blue" id="p30"></button>
+    <button class="static_blue" id="b1"></button>
+    <button class="static_blue" id="b2"></button>
+    <button class="static_blue" id="b3"></button>
+    <button class="static_blue" id="b4"></button>
+    <button class="round_inv"></button>
+    <button class="static_yellow" id="y4"></button>
+    <button class="static_yellow" id="y3"></button>
+    <button class="static_yellow" id="y2"></button>
+    <button class="static_yellow" id="y1"></button>
+    <button class="round finish_yellow" id="p10"></button>
+</div>
+
+<div class="top">
+    <button class="round finish_blue" id="p29"></button>
+    <button class="round finish_blue" id="p28"></button>
+    <button class="round" id="p27"></button>
+    <button class="round" id="p26"></button>
+    <button class="round" id="p25"></button>
+    <button class="static_red" id="r4"></button>
+    <button class="round" id="p15"></button>
+    <button class="round" id="p14"></button>
+    <button class="round" id="p13"></button>
+    <button class="round" id="p12"></button>
+    <button class="static_yellow" id="p11"></button>
+</div>
+
+<div class="top">
     <button class="round_inv"></button>
     <button class="round_inv"></button>
-    <button class="static_red" id="p21">p21</button>
-    <button class="round finish_red" id="p20">p20</button>
-    <button class="round finish_red" id="p19">p19</button>
     <button class="round_inv"></button>
     <button class="round_inv"></button>
-    <button class="round_yellow" id="home_13">h15</button>
-    <button class="round_yellow" id="home_14">h16</button>
+    <button class="round" id="p24"></button>
+    <button class="static_red" id="r3"></button>
+    <button class="round" id="p16"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+</div>
+
+<div class="top">
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round" id="p23"></button>
+    <button class="static_red" id="r2"></button>
+    <button class="round" id="p17"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+</div>
+
+<div class="top">
+    <button class="round_red" id="home_9"></button>
+    <button class="round_red" id="home_10"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round" id="p22"></button>
+    <button class="static_red" id="r1"></button>
+    <button class="round finish_red" id="p18"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_yellow" id="home_13"></button>
+    <button class="round_yellow" id="home_14"></button>
+</div>
+
+<div class="top">
+    <button class="round_red" id="home_11"></button>
+    <button class="round_red" id="home_12"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="static_red" id="p21"></button>
+    <button class="round finish_red" id="p20"></button>
+    <button class="round finish_red" id="p19"></button>
+    <button class="round_inv"></button>
+    <button class="round_inv"></button>
+    <button class="round_yellow" id="home_13"></button>
+    <button class="round_yellow" id="home_14"></button>
 </div>
