@@ -151,3 +151,11 @@ $(function() {
         }
     });
 })();
+
+$(function() {
+    $('.reset-button').click(function () {
+        $.get('http://localhost/Project/reset.php', function (data) {
+            console.log(data)
+        })
+    });
+});
