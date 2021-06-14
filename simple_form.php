@@ -1,6 +1,5 @@
 <?php
-/* Header */
-$page_title = 'Webprogramming Assignment 3';
+$page_title = "Mens Erger Je Niet";
 $navigation = Array(
     'active' => 'Simple Form',
     'items' => Array(
@@ -10,6 +9,7 @@ $navigation = Array(
 include __DIR__ . '/tpl/head.php';
 include __DIR__ . '/tpl/body_start.php';
 ?>
+
 <?php
     if (isset($_GET["name"])){
         if($_GET["name"] != ""){
@@ -40,12 +40,14 @@ include __DIR__ . '/tpl/body_start.php';
     }
 }
 ?>
+
     <h1>Please enter your name</h1>
     <form name="myForm" id="form" action="simple_form.php" method="get" novalidate>
         <label for="name">Name</label>
         <input class="form-control" type="text" id="name" name="name" placeholder="Jan Jansen" required>
         <button class="btn btn-primary" type="submit">Submit</button>
     </form>
+
 <?php
 include __DIR__ . '/tpl/body_end.php';
 ?>

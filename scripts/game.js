@@ -255,3 +255,12 @@ $(function() {
         }
     });
 })();
+
+$(function worker4() {
+    let request = $.ajax({
+        url: "http://localhost/Project/finish.php",
+    });
+    request.done(function(data){
+        console.log(data);
+    });
+})();
