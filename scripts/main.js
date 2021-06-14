@@ -9,7 +9,7 @@
         },
         complete: function() {
             // Schedule the next request when the current one's complete
-            setTimeout(worker1, 5000);
+            setTimeout(worker1, 2000);
         }
     });
 })();
@@ -26,7 +26,7 @@
         },
         complete: function() {
             // Schedule the next request when the current one's complete
-            setTimeout(worker2, 5000);
+            setTimeout(worker2, 2000);
         }
     });
 })();

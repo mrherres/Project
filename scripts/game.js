@@ -15,8 +15,8 @@ $(function() {
         $('#dice').attr('src', "img/dice" + dice_result + ".png")
         $("#dice-text").html("You rolled: " + dice_result);
         if(dice_result === 6){
-            const numBlue = $(".pawnb").length;
-            const numGreen = $(".pawng").length;
+            //const numBlue = $(".pawnb").length + 1;
+            //const numGreen = $(".pawng").length + 1;
             // Hier moet iets komen van, wil je een nieuwe pion opzetten
             let request = $.ajax({
                 url: "http://localhost/Project/spawn.php",
@@ -24,8 +24,8 @@ $(function() {
                 data: {
                     "rolled" : dice_result,
                     "name" : pname,
-                    "pawnB": numBlue,
-                    "pawnG": numGreen
+                    //"pawnB": numBB,
+                    //"pawnG": numGreen
                 },
                 dataType: "json"
             });
@@ -117,24 +117,52 @@ $(function() {
             //let i;
             for (let i in data["field"]) {
                 let item = data["field"][i];
-                if (item === "blue") {
+                if (item === "blue" && $("#"+i).hasClass("round_green pawng")) {
+                    $("#"+i).addClass("round_blue pawnb inPlay").removeClass("round_green pawng");
+                    let request = $.ajax({
+                        url: "http://localhost/Project/throw.php",
+                        method: "POST",
+                        data: {
+                            "color": item
+                        },
+                        dataType: "json"
+                    });
+                    request.done(function (data) {
+                        console.log(data);
+                    });
+                }
+                else if (item === "blue") {
                     $("#"+i).addClass("round_blue pawnb inPlay").removeClass("round_green");
+                }
+                else if (item === "green" && $("#"+i).hasClass("round_blue pawnb")){
+                    $("#"+i).addClass("round_green pawng inPlay").removeClass("round_blue pawnb");
+                    let request = $.ajax({
+                        url: "http://localhost/Project/throw.php",
+                        method: "POST",
+                        data: {
+                            "color": item
+                        },
+                        dataType: "json"
+                    });
+                    request.done(function (data) {
+                        console.log(data);
+                    });
+                }
+                else if(item === "green") {
+                    $("#"+i).addClass("round_green pawng inPlay");
                 }
                 else if(item === "empty") {
                     $("#"+i).removeClass("round_blue round_green pawnb pawng inPlay");
-                }
-                else{
-                    $("#"+i).addClass("round_green pawng inPlay").removeClass("round_blue");
                 }
             }
             for (let i in data["finish"]){
                 let item = data["finish"][i];
                 if(item === "inB") {
                     //console.log(i);
-                    $("#"+i).addClass("round_blue")
+                    $("#"+i).addClass("round_blue pawnb")
                 }
                 else if(item === "inG"){
-                    $("#"+i).addClass("round_green")
+                    $("#"+i).addClass("round_green pawng")
                 }
             }
             //"pawns":{"blue":2,"green":0}
@@ -155,6 +183,25 @@ $(function() {
             }
             else if(data["pawns"]["blue"] === 1){
                 $("#home_1").addClass("round").removeClass("round_blue");
+            }
+
+            if(data["pawns"]["green"] === 4){
+                $("#home_5").addClass("round").removeClass("round_green");
+                $("#home_6").addClass("round").removeClass("round_green");
+                $("#home_7").addClass("round").removeClass("round_green");
+                $("#home_8").addClass("round").removeClass("round_green");
+            }
+            else if(data["pawns"]["green"] === 3){
+                $("#home_5").addClass("round").removeClass("round_green");
+                $("#home_6").addClass("round").removeClass("round_green");
+                $("#home_7").addClass("round").removeClass("round_green");
+            }
+            else if(data["pawns"]["green"] === 2){
+                $("#home_5").addClass("round").removeClass("round_green");
+                $("#home_6").addClass("round").removeClass("round_green");
+            }
+            else if(data["pawns"]["green"] === 1){
+                $("#home_5").addClass("round").removeClass("round_green");
             }
 
             const abba = window.location.search;
@@ -183,3 +230,18 @@ $(function() {
         })
     });
 });
+
+(function worker3() {
+    $.ajax({
+        url: 'data/players.json',
+        success: function (data) {
+            if(data["player1"]["status"] === "unready" && data["player2"]["status"] === "unready"){
+                document.location.href = "http://localhost/Project/simple_form.php";
+            }
+        },
+        complete: function() {
+            // Schedule the next request when the current one's complete
+            setTimeout(worker3, 1000);
+        }
+    });
+})();
