@@ -27,8 +27,8 @@ $getName = $_GET['name'];
     <button class="round_blue pawn" id="home_2">h2</button>
     <button class="round_inv"></button>
     <button class="round_inv"></button>
-    <button class="round" id="p39">p39</button>
-    <button class="round" id="p40">p40</button>
+    <button class="round finish_green" id="p39">p39</button>
+    <button class="round finish_green" id="p40">p40</button>
     <button class="static_green" id="p1">p1</button>
     <button class="round_inv"></button>
     <button class="round_inv"></button>
@@ -41,7 +41,7 @@ $getName = $_GET['name'];
     <button class="round_blue pawn" id="home_4">h4</button>
     <button class="round_inv"></button>
     <button class="round_inv"></button>
-    <button class="round" id="p38">p38</button>
+    <button class="round finish_green" id="p38">p38</button>
     <button class="round_green" id="gfinish_1">f1</button>
     <button class="round" id="p2">p2</button>
     <button class="round_inv"></button>
@@ -88,12 +88,12 @@ $getName = $_GET['name'];
     <button class="round" id="p5">p5</button>
     <button class="round" id="p6">p6</button>
     <button class="round" id="p7">p7</button>
-    <button class="round" id="p8">p8</button>
-    <button class="round" id="p9">p9</button>
+    <button class="round finish_yellow" id="p8">p8</button>
+    <button class="round finish_yellow" id="p9">p9</button>
 </div>
 
 <div class="top">
-    <button class="round" id="p30">p30</button>
+    <button class="round finish_blue" id="p30">p30</button>
     <button class="round_blue" id="bfinish_1">f1</button>
     <button class="round_blue" id="bfinish_2">f2</button>
     <button class="round_blue" id="bfinish_3">f3</button>
@@ -103,12 +103,12 @@ $getName = $_GET['name'];
     <button class="round_yellow" id="yfinish_3">f3</button>
     <button class="round_yellow" id="yfinish_2">f2</button>
     <button class="round_yellow" id="yfinish_1">f1</button>
-    <button class="round" id="p10">p10</button>
+    <button class="round finish_yellow" id="p10">p10</button>
 </div>
 
 <div class="top">
-    <button class="round" id="p29">p29</button>
-    <button class="round" id="p28">p28</button>
+    <button class="round finish_blue" id="p29">p29</button>
+    <button class="round finish_blue" id="p28">p28</button>
     <button class="round" id="p27">p27</button>
     <button class="round" id="p26">p26</button>
     <button class="round" id="p25">p25</button>
@@ -155,7 +155,7 @@ $getName = $_GET['name'];
     <button class="round_inv"></button>
     <button class="round" id="p22">p22</button>
     <button class="round_red" id="rfinish_1">f1</button>
-    <button class="round" id="p18">p18</button>
+    <button class="round finish_red" id="p18">p18</button>
     <button class="round_inv"></button>
     <button class="round_inv"></button>
     <button class="round_yellow" id="home_13">h13</button>
@@ -168,8 +168,8 @@ $getName = $_GET['name'];
     <button class="round_inv"></button>
     <button class="round_inv"></button>
     <button class="static_red" id="p21">p21</button>
-    <button class="round" id="p20">p20</button>
-    <button class="round" id="p19">p19</button>
+    <button class="round finish_red" id="p20">p20</button>
+    <button class="round finish_red" id="p19">p19</button>
     <button class="round_inv"></button>
     <button class="round_inv"></button>
     <button class="round_yellow" id="home_13">h15</button>

@@ -8,6 +8,10 @@ if($check["player1"]["name"] === $_POST["name"]){
         $NEXT = $NEXT - 40;
     }
 
+    if($NEXT === "29" || $NEXT === "28" || $NEXT === "30"){
+
+    }
+
     $checkFile2 = file_get_contents("data/gamestate.json");
     $check2 = json_decode($checkFile2, true);
     $check2["field"]["p".$POSB] = "empty";

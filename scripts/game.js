@@ -54,7 +54,7 @@ $(function() {
 });
 
 $(function() {
-    $('.round, .static_blue, .static_green').click(function () {
+    $('.round, .static_blue, .static_green, .static_red, .static_yellow').click(function () {
         const abba = window.location.search;
         const urlParams = new URLSearchParams(abba);
         const thrown = $("#dice-text").text();
@@ -83,6 +83,8 @@ $(function() {
             });
         }
         else if(pturn === "2" && $(this).hasClass("pawng")){
+            let newPos = $(this).html();
+            console.log(newPos);
             //console.log(throwns);
             let currentPosB = "00";
             let currentPosG = Pos.substring(1);

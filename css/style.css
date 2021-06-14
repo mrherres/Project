@@ -25,12 +25,12 @@ footer {
 }
 
 .round_blue {
-    width: 50px;
-    height: 50px;
-    background-color: blue;
-    border: 3px black solid;
-    cursor: pointer;
-    border-radius: 50%;
+    width: 50px !important;
+    height: 50px !important;
+    background-color: blue !important;
+    border: 3px black solid !important;
+    cursor: pointer !important;
+    border-radius: 50% !important;
 }
 
 .static_blue {
@@ -42,13 +42,49 @@ footer {
     border-radius: 50%;
 }
 
-.round_red {
+.finish_blue {
     width: 50px;
     height: 50px;
-    background-color: red;
-    border: 3px black solid;
+    border: 3px aquamarine solid;
+    background-color: white;
     cursor: pointer;
     border-radius: 50%;
+}
+
+.finish_green {
+    width: 50px;
+    height: 50px;
+    border: 3px greenyellow solid;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.finish_red {
+    width: 50px;
+    height: 50px;
+    border: 3px orangered solid;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.finish_yellow {
+    width: 50px;
+    height: 50px;
+    border: 3px orange solid;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.round_red {
+    width: 50px !important;
+    height: 50px !important;
+    background-color: red !important;
+    border: 3px black solid !important;
+    cursor: pointer !important;
+    border-radius: 50% !important;
 }
 
 .static_red {
@@ -61,12 +97,12 @@ footer {
 }
 
 .round_yellow {
-    width: 50px;
-    height: 50px;
-    background-color: yellow;
-    border: 3px black solid;
-    cursor: pointer;
-    border-radius: 50%;
+    width: 50px !important;
+    height: 50px !important;
+    background-color: yellow !important;
+    border: 3px black solid !important;
+    cursor: pointer !important;
+    border-radius: 50% !important;
 }
 
 .static_yellow {
@@ -79,12 +115,12 @@ footer {
 }
 
 .round_green {
-    width: 50px;
-    height: 50px;
-    background-color: green;
-    border: 3px black solid;
-    cursor: pointer;
-    border-radius: 50%;
+    width: 50px !important;
+    height: 50px !important;
+    background-color: green !important;
+    border: 3px black solid !important;
+    cursor: pointer !important;
+    border-radius: 50% !important;
 }
 
 .static_green {
