@@ -29,22 +29,43 @@ $(function() {
                 console.log(data);
             });
         }
+        else if(pturn === "1" && $(".pawnb").hasClass("inPlay")){
+            console.log("Go on1");
+        }
+        else if(pturn === "2" && $(".pawng").hasClass("inPlay")) {
+            console.log("Go on2");
+        }
+        else {
+            console.log("You need a 6");
+            let request = $.ajax({
+                url: "http://localhost/Project/notSix.php",
+                method: "POST",
+                data: {
+                    "rolled" : dice_result,
+                    "name" : pname
+                },
+                dataType: "json"
+            });
+            request.done(function(data){
+                console.log(data);
+            });
+        }
     });
 });
 
 $(function() {
-    $('.pawnb').click(function () {
+    $('.round, .static_blue, .static_green').click(function () {
         const abba = window.location.search;
         const urlParams = new URLSearchParams(abba);
         const thrown = $("#dice-text").text();
         const throwns = thrown.slice(-1);
         const pname = urlParams.get('name');
         const pturn = urlParams.get('turn');
-        let PosB = $(this).attr("id");;
-        console.log(PosB.substring(1));
-        if(pturn === "1"){
+        let Pos = $(this).attr("id");
+        if(pturn === "1" && $(this).hasClass("pawnb")){
+            console.log(Pos.substring(1));
             //console.log(throwns);
-            let currentPosB = PosB.substring(1);
+            let currentPosB = Pos.substring(1);
             let currentPosG = "00";
             let request = $.ajax({
                 url: "http://localhost/Project/move.php",
@@ -61,23 +82,10 @@ $(function() {
                 console.log(data);
             });
         }
-    });
-});
-
-$(function() {
-    $('.pawng').click(function () {
-        const abba = window.location.search;
-        const urlParams = new URLSearchParams(abba);
-        const thrown = $("#dice-text").text();
-        const throwns = thrown.slice(-1);
-        const pname = urlParams.get('name');
-        const pturn = urlParams.get('turn');
-        let PosG = $(this).attr("id");;
-        console.log(PosG.substring(1));
-        if(pturn === "2"){
+        else if(pturn === "2" && $(this).hasClass("pawng")){
             //console.log(throwns);
             let currentPosB = "00";
-            let currentPosG = PosG.substring(1);
+            let currentPosG = Pos.substring(1);
             let request = $.ajax({
                 url: "http://localhost/Project/move.php",
                 method: "POST",
