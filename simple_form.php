@@ -23,7 +23,7 @@ include __DIR__ . '/tpl/body_start.php';
                 $data = json_decode($json_file, true);
                 $data['player1']['name'] = $player_name;
                 $turn = $data['player1']['turn'];
-                $json_object = json_encode($data);
+                $json_object = json_encode($data, JSON_PRETTY_PRINT);
                 file_put_contents('data/players.json', $json_object);
                 #header('Location: main.php?name='.$player_name.'&turn='.$turn);
             }
@@ -32,7 +32,7 @@ include __DIR__ . '/tpl/body_start.php';
                 $data = json_decode($json_file, true);
                 $data['player2']['name'] = $player_name;
                 $turn = $data['player2']['turn'];
-                $json_object = json_encode($data);
+                $json_object = json_encode($data, JSON_PRETTY_PRINT);
                 file_put_contents('data/players.json', $json_object);
                 #header('Location: main.php?name='.$player_name.'&turn='.$turn);
             }

@@ -10,7 +10,13 @@ $check["player1"]["status"] = "unready";
 $check["player2"]["status"] = "unready";
 
 $check2["finish"]["b1"] = "empty";
+$check2["finish"]["b2"] = "empty";
+$check2["finish"]["b3"] = "empty";
+$check2["finish"]["b4"] = "empty";
 $check2["finish"]["g1"] = "empty";
+$check2["finish"]["g2"] = "empty";
+$check2["finish"]["g3"] = "empty";
+$check2["finish"]["g4"] = "empty";
 
 $check2["pawns"]["blue"] = 0;
 $check2["pawns"]["green"] = 0;
@@ -19,7 +25,7 @@ for ($x = 1; $x <= 40; $x++) {
     $check2["field"]["p$x"] = "empty";
 }
 
-$json_object = json_encode($check);
-$json_object2 = json_encode($check2);
+$json_object = json_encode($check, JSON_PRETTY_PRINT);
+$json_object2 = json_encode($check2, JSON_PRETTY_PRINT);
 file_put_contents('data/players.json', $json_object);
 file_put_contents('data/gamestate.json', $json_object2);
