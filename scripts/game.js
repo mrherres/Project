@@ -15,13 +15,17 @@ $(function() {
         $('#dice').attr('src', "img/dice" + dice_result + ".png")
         $("#dice-text").html("You rolled: " + dice_result);
         if(dice_result === 6){
+            const numBlue = $(".pawnb").length;
+            const numGreen = $(".pawng").length;
             // Hier moet iets komen van, wil je een nieuwe pion opzetten
             let request = $.ajax({
                 url: "http://localhost/Project/spawn.php",
                 method: "POST",
                 data: {
                     "rolled" : dice_result,
-                    "name" : pname
+                    "name" : pname,
+                    "pawnB": numBlue,
+                    "pawnG": numGreen
                 },
                 dataType: "json"
             });
