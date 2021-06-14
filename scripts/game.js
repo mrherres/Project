@@ -133,6 +133,26 @@ $(function() {
                     $("#"+i).addClass("round_green")
                 }
             }
+            //"pawns":{"blue":2,"green":0}
+            if(data["pawns"]["blue"] === 4){
+                $("#home_1").addClass("round").removeClass("round_blue");
+                $("#home_2").addClass("round").removeClass("round_blue");
+                $("#home_3").addClass("round").removeClass("round_blue");
+                $("#home_4").addClass("round").removeClass("round_blue");
+            }
+            else if(data["pawns"]["blue"] === 3){
+                $("#home_1").addClass("round").removeClass("round_blue");
+                $("#home_2").addClass("round").removeClass("round_blue");
+                $("#home_3").addClass("round").removeClass("round_blue");
+            }
+            else if(data["pawns"]["blue"] === 2){
+                $("#home_1").addClass("round").removeClass("round_blue");
+                $("#home_2").addClass("round").removeClass("round_blue");
+            }
+            else if(data["pawns"]["blue"] === 1){
+                $("#home_1").addClass("round").removeClass("round_blue");
+            }
+
             const abba = window.location.search;
             const urlParams = new URLSearchParams(abba);
             const pturn = urlParams.get('turn')
