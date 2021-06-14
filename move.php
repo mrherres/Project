@@ -7,13 +7,18 @@ if($check["player1"]["name"] === $_POST["name"]){
     if($NEXT > 40){
         $NEXT = $NEXT - 40;
     }
-
-    if($NEXT === "29" || $NEXT === "28" || $NEXT === "30"){
-
-    }
-
     $checkFile2 = file_get_contents("data/gamestate.json");
     $check2 = json_decode($checkFile2, true);
+    if($NEXT === 29 || $NEXT === 28 || $NEXT === 30){
+        if($check2["finish"]["b1"] === "empty"){
+            $check2["finish"]["b1"] = "inB";
+            $check2["field"]["p".$POSB] = "empty";
+        }
+        else if($check2["finish"]["b2"] === "empty"){
+            $check2["finish"]["b1"] = "inB";
+            $check2["field"]["p".$POSB] = "empty";
+        }
+    }
     $check2["field"]["p".$POSB] = "empty";
     $check2["field"]["p".$NEXT] = "blue";
 

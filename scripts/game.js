@@ -123,6 +123,16 @@ $(function() {
                     $("#"+i).addClass("round_green pawng inPlay").removeClass("round_blue");
                 }
             }
+            for (let i in data["finish"]){
+                let item = data["finish"][i];
+                if(item === "inB") {
+                    //console.log(i);
+                    $("#"+i).addClass("round_blue")
+                }
+                else if(item === "inG"){
+                    $("#"+i).addClass("round_green")
+                }
+            }
             const abba = window.location.search;
             const urlParams = new URLSearchParams(abba);
             const pturn = urlParams.get('turn')
