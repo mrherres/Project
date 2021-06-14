@@ -1,9 +1,3 @@
-//function movePawn(id) {
-  //  if($("#p"+id).hasClass("pawn")){
-    //    $("#p"+id).addClass("round_green");
-    //}
-//}
-
 $(function() {
 
     $('#dice').click(function () {
@@ -15,17 +9,12 @@ $(function() {
         $('#dice').attr('src', "img/dice" + dice_result + ".png")
         $("#dice-text").html("You rolled: " + dice_result);
         if(dice_result === 6){
-            //const numBlue = $(".pawnb").length + 1;
-            //const numGreen = $(".pawng").length + 1;
-            // Hier moet iets komen van, wil je een nieuwe pion opzetten
             let request = $.ajax({
                 url: "http://localhost/Project/spawn.php",
                 method: "POST",
                 data: {
                     "rolled" : dice_result,
-                    "name" : pname,
-                    //"pawnB": numBB,
-                    //"pawnG": numGreen
+                    "name" : pname
                 },
                 dataType: "json"
             });
@@ -158,14 +147,12 @@ $(function() {
             for (let i in data["finish"]){
                 let item = data["finish"][i];
                 if(item === "inB") {
-                    //console.log(i);
                     $("#"+i).addClass("round_blue pawnb")
                 }
                 else if(item === "inG"){
                     $("#"+i).addClass("round_green pawng")
                 }
             }
-            //"pawns":{"blue":2,"green":0}
             if(data["pawns"]["blue"] === 4){
                 $("#home_1").addClass("round").removeClass("round_blue");
                 $("#home_2").addClass("round").removeClass("round_blue");
@@ -176,13 +163,25 @@ $(function() {
                 $("#home_1").addClass("round").removeClass("round_blue");
                 $("#home_2").addClass("round").removeClass("round_blue");
                 $("#home_3").addClass("round").removeClass("round_blue");
+                $("#home_4").addClass("round_blue").removeClass("round");
             }
             else if(data["pawns"]["blue"] === 2){
                 $("#home_1").addClass("round").removeClass("round_blue");
                 $("#home_2").addClass("round").removeClass("round_blue");
+                $("#home_3").addClass("round_blue").removeClass("round");
+                $("#home_4").addClass("round_blue").removeClass("round");
             }
             else if(data["pawns"]["blue"] === 1){
                 $("#home_1").addClass("round").removeClass("round_blue");
+                $("#home_2").addClass("round_blue").removeClass("round");
+                $("#home_3").addClass("round_blue").removeClass("round");
+                $("#home_4").addClass("round_blue").removeClass("round");
+            }
+            else if(data["pawns"]["blue"] === 0){
+                $("#home_1").addClass("round_blue").removeClass("round");
+                $("#home_2").addClass("round_blue").removeClass("round");
+                $("#home_3").addClass("round_blue").removeClass("round");
+                $("#home_4").addClass("round_blue").removeClass("round");
             }
 
             if(data["pawns"]["green"] === 4){
@@ -195,13 +194,26 @@ $(function() {
                 $("#home_5").addClass("round").removeClass("round_green");
                 $("#home_6").addClass("round").removeClass("round_green");
                 $("#home_7").addClass("round").removeClass("round_green");
+                $("#home_8").addClass("round_green").removeClass("round");
             }
             else if(data["pawns"]["green"] === 2){
                 $("#home_5").addClass("round").removeClass("round_green");
                 $("#home_6").addClass("round").removeClass("round_green");
+                $("#home_7").addClass("round_green").removeClass("round");
+                $("#home_8").addClass("round_green").removeClass("round");
             }
             else if(data["pawns"]["green"] === 1){
                 $("#home_5").addClass("round").removeClass("round_green");
+                $("#home_6").addClass("round_green").removeClass("round");
+                $("#home_7").addClass("round_green").removeClass("round");
+                $("#home_8").addClass("round_green").removeClass("round");
+
+            }
+            else if(data["pawns"]["green"] === 0){
+                $("#home_5").addClass("round_green").removeClass("round");
+                $("#home_6").addClass("round_green").removeClass("round");
+                $("#home_7").addClass("round_green").removeClass("round");
+                $("#home_8").addClass("round_green").removeClass("round");
             }
 
             const abba = window.location.search;
@@ -209,16 +221,14 @@ $(function() {
             const pturn = urlParams.get('turn')
             if (data['information'].status === pturn) {
                 $("#dice").css("display", "inline");
-                //$("#dice-text").css("display", "inline");
             }
             else{
                 $("#dice").hide();
-                //$("#dice-text").hide();
             }
         },
         complete: function() {
             // Schedule the next request when the current one's complete
-            setTimeout(worker2, 1000);
+            setTimeout(worker2, 3000);
         }
     });
 })();
@@ -241,7 +251,7 @@ $(function() {
         },
         complete: function() {
             // Schedule the next request when the current one's complete
-            setTimeout(worker3, 1000);
+            setTimeout(worker3, 3000);
         }
     });
 })();

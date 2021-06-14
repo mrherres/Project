@@ -1,5 +1,6 @@
 <?php
 $color = $_POST["color"];
+$throw = $_POST["throw"];
 $checkFile2 = file_get_contents("data/gamestate.json");
 $check2 = json_decode($checkFile2, true);
 if($color === "blue"){
