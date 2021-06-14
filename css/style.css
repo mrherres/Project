@@ -141,6 +141,10 @@ footer {
     visibility: hidden;
 }
 
+.reset-button{
+    margin-left: 75%;
+}
+
 .top{
     text-align: center;
 }

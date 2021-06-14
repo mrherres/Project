@@ -22,7 +22,7 @@ $getName = $_GET['name'];
     <input type="image" class="dice" id="dice" src="img/dice6.png">
 </div>
 
-<div class="reset-button" id="reset" type="button">
+<div class="reset-button btn btn-danger" id="reset" type="button">
     Reset game
 </div>
 

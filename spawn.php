@@ -26,7 +26,7 @@ if($check["player1"]["name"] === $_POST["name"]){
         file_put_contents('data/pawns.json', $json_object);
     }
 }
-else {
+else if($check["player2"]["name"] === $_POST["name"]) {
     if ($check3["2"]["pawn1"] === "base" or $check3["2"]["pawn2"] === "base" or $check3["2"]["pawn3"] === "base" or $check3["2"]["pawn4"] === "base") {
         $checkFile2 = file_get_contents("data/gamestate.json");
         $check2 = json_decode($checkFile2, true);
