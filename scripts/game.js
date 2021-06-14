@@ -99,6 +99,16 @@ $(function() {
     });
 });
 
+$(function() {
+    $('.inPlay').click(function () {
+        const abba = window.location.search;
+        const urlParams = new URLSearchParams(abba);
+        const pname = urlParams.get('name');
+        const pturn = urlParams.get('turn');
+        console.log("clicked");
+    });
+});
+
 (function worker2() {
     $.ajax({
         url: 'data/gamestate.json',
@@ -106,19 +116,14 @@ $(function() {
             //let i;
             for (let i in data["field"]) {
                 let item = data["field"][i];
-                //console.log(item);
                 if (item === "blue") {
-                    //console.log(item[2]);
-                    // Als hier nog een removeclass komt voor groen etc, en bij de andere else statements
-                    // Dan verdwijnen pionnen al als een soort van "eraf gooien"
-                    // Sinds de positie hetzelde is
-                    $("#"+i).addClass("round_blue pawn inPlay");
+                    $("#"+i).addClass("round_blue pawn inPlay").removeClass("round_green");
                 }
                 else if(item === "empty") {
                     $("#"+i).removeClass("round_blue round_green pawn inPlay");
                 }
                 else{
-                    $("#"+i).addClass("round_green pawn inPlay")
+                    $("#"+i).addClass("round_green pawn inPlay").removeClass("round_blue");
                 }
             }
             const abba = window.location.search;
