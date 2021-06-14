@@ -29,83 +29,70 @@ $(function() {
                 console.log(data);
             });
         }
-        else {
-            let PosB = $(".round_blue.pawn.inPlay").attr("id");
-            let PosG = $(".round_green.pawn.inPlay").attr("id");
-            if ((PosB === undefined && pturn === "1") || (PosG === undefined && pturn === "2")) {
-                console.log("You need a 6 sit1! " + pturn);
-                let request = $.ajax({
-                    url: "http://localhost/Project/notSix.php"
-                });
-                request.done(function(){
-                    console.log("Fired the php!");
-                });
-            }
-            else if(pturn ==="2"){
-                let currentPosB = "00";
-                let currentPosG = PosG.substring(1);
-                let request = $.ajax({
-                    url: "http://localhost/Project/move.php",
-                    method: "POST",
-                    data: {
-                        "rolled": dice_result,
-                        "name": pname,
-                        "posB": currentPosB,
-                        "posG": currentPosG
-                    },
-                    dataType: "json"
-                });
-                request.done(function (data) {
-                    console.log(data);
-                });
-            }
-            else if(pturn ==="1"){
-                let currentPosB = PosB.substring(1);
-                let currentPosG = "00";
-                let request = $.ajax({
-                    url: "http://localhost/Project/move.php",
-                    method: "POST",
-                    data: {
-                        "rolled": dice_result,
-                        "name": pname,
-                        "posB": currentPosB,
-                        "posG": currentPosG
-                    },
-                    dataType: "json"
-                });
-                request.done(function (data) {
-                    console.log(data);
-                });
-            }
-            else {
-                let currentPosB = PosB.substring(1);
-                let currentPosG = PosG.substring(1);
-                let request = $.ajax({
-                    url: "http://localhost/Project/move.php",
-                    method: "POST",
-                    data: {
-                        "rolled": dice_result,
-                        "name": pname,
-                        "posB": currentPosB,
-                        "posG": currentPosG
-                    },
-                    dataType: "json"
-                });
-                request.done(function (data) {
-                    console.log(data);
-                });
-            }
+    });
+});
+
+$(function() {
+    $('.pawnb').click(function () {
+        const abba = window.location.search;
+        const urlParams = new URLSearchParams(abba);
+        const thrown = $("#dice-text").text();
+        const throwns = thrown.slice(-1);
+        const pname = urlParams.get('name');
+        const pturn = urlParams.get('turn');
+        let PosB = $(this).attr("id");;
+        console.log(PosB.substring(1));
+        if(pturn === "1"){
+            //console.log(throwns);
+            let currentPosB = PosB.substring(1);
+            let currentPosG = "00";
+            let request = $.ajax({
+                url: "http://localhost/Project/move.php",
+                method: "POST",
+                data: {
+                    "rolled": throwns,
+                    "name": pname,
+                    "posB": currentPosB,
+                    "posG": currentPosG
+                },
+                dataType: "json"
+            });
+            request.done(function (data) {
+                console.log(data);
+            });
         }
     });
 });
 
 $(function() {
-    $('.inPlay').click(function () {
+    $('.pawng').click(function () {
         const abba = window.location.search;
         const urlParams = new URLSearchParams(abba);
+        const thrown = $("#dice-text").text();
+        const throwns = thrown.slice(-1);
         const pname = urlParams.get('name');
         const pturn = urlParams.get('turn');
-        console.log("clicked");
+        let PosG = $(this).attr("id");;
+        console.log(PosG.substring(1));
+        if(pturn === "2"){
+            //console.log(throwns);
+            let currentPosB = "00";
+            let currentPosG = PosG.substring(1);
+            let request = $.ajax({
+                url: "http://localhost/Project/move.php",
+                method: "POST",
+                data: {
+                    "rolled": throwns,
+                    "name": pname,
+                    "posB": currentPosB,
+                    "posG": currentPosG
+                },
+                dataType: "json"
+            });
+            request.done(function (data) {
+                console.log(data);
+            });
+        }
     });
 });
 
@@ -117,13 +104,13 @@ $(function() {
             for (let i in data["field"]) {
                 let item = data["field"][i];
                 if (item === "blue") {
-                    $("#"+i).addClass("round_blue pawn inPlay").removeClass("round_green");
+                    $("#"+i).addClass("round_blue pawnb inPlay").removeClass("round_green");
                 }
                 else if(item === "empty") {
-                    $("#"+i).removeClass("round_blue round_green pawn inPlay");
+                    $("#"+i).removeClass("round_blue round_green pawnb pawng inPlay");
                 }
                 else{
-                    $("#"+i).addClass("round_green pawn inPlay").removeClass("round_blue");
+                    $("#"+i).addClass("round_green pawng inPlay").removeClass("round_blue");
                 }
             }
             const abba = window.location.search;
