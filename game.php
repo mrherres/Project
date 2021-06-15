@@ -21,12 +21,10 @@ $getName = $_GET['name'];
     <table class="table">
         <tr>
             <th>Player</th>
-            <th>Status</th>
             <th>Wins</th>
         </tr>
         <tr>
             <td id="player1Name"></td>
-            <td id="status1"></td>
             <td id="wins1">
                 <?
                 $checkFile = file_get_contents("data/players.json");
@@ -37,7 +35,6 @@ $getName = $_GET['name'];
         </tr>
         <tr>
             <td id="player2Name"></td>
-            <td id="status2"></td>
             <td id="wins2">
                 <?
                 $checkFile = file_get_contents("data/players.json");

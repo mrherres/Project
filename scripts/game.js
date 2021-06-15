@@ -268,3 +268,23 @@ $(function() {
         }
     });
 })();
+
+
+(function worker1() {
+    $.ajax({
+        url: 'data/players.json',
+        success: function(data) {
+            $('#player1Name').html(data["player1"].name);
+            $('#player2Name').html(data["player2"].name);
+            $('#wins1').html(data["player1"].wins);
+            $('wins2').html(data["player2"].wins);
+        },
+        error: function() {
+            $('#player1Name').html("Not Available");
+        },
+        complete: function() {
+            // Schedule the next request when the current one's complete
+            setTimeout(worker1, 2000);
+        }
+    });
+})();
