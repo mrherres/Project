@@ -10,6 +10,10 @@ $page_title = 'Mens Erger Je Niet';
 include __DIR__ . '/tpl/headG.php';
 include __DIR__ . '/tpl/body_start.php';
 $getName = $_GET['name'];
+
+$checkFile = file_get_contents("../data/gamestate.json");
+$check = json_decode($checkFile, true);
+
 ?>
 
 </div>

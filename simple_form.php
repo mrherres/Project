@@ -1,11 +1,11 @@
 <?php
 $page_title = "Mens Erger Je Niet";
-$navigation = Array(
-    'active' => 'Simple Form',
-    'items' => Array(
-        'Simple Form' => '/Project/simple_form.php'
-    )
-);
+//$navigation = Array(
+   // 'active' => 'Simple Form',
+    //'items' => Array(
+      //  'Simple Form' => '/Project/simple_form.php'
+   // )
+//);
 include __DIR__ . '/tpl/head.php';
 include __DIR__ . '/tpl/body_start.php';
 ?>

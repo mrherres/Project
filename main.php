@@ -15,7 +15,7 @@ $getName = $_GET['name'];
 
 <div class="welcome">
     <h1> Welcome! </h1>
-    <button class="btn btn-warning">Reset Player</button>
+    <button class="btn btn-warning" id="reset">Reset Player</button>
     <h2> Current players are:</h2>
     <table class="table">
         <tr>
@@ -46,9 +46,6 @@ $getName = $_GET['name'];
             </td>
         </tr>
     </table>
-    <!--<div>
-        <form action="spawn.php" method="post"><input type="submit" class="btn btn-success" value="Set Move"/></form>
-    </div> -->
 </div>
 </div>
 </div>

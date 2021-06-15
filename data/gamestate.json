@@ -1,6 +1,7 @@
 {
     "information": {
-        "status": "1"
+        "status": "1",
+        "gamestatus": "playing"
     },
     "field": {
         "p1": "empty",

@@ -267,7 +267,7 @@ $(function() {
         success: function (data) {
             if (data === "win") {
                 console.log("returning")
-                document.location.href = "http://localhost/Project/main.php?name='.$pname.'&turn='.$pturn"
+                document.location.href = "http://localhost/Project/main.php?name=" + pname + '&turn=' + pturn;
             }
         },
         complete: function () {
