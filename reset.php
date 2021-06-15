@@ -8,8 +8,8 @@ $check["player1"]["name"] = "";
 $check["player2"]["name"] = "";
 $check["player1"]["status"] = "unready";
 $check["player2"]["status"] = "unready";
-$check["player1"]["wins"] = 0
-$check["player2"]["wins"] = 0
+$check["player1"]["wins"] = 0;
+$check["player2"]["wins"] = 0;
 
 $check2["information"]["status"] = "1";
 
