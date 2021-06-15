@@ -49,6 +49,20 @@ $getName = $_GET['name'];
     <!--<div>
         <form action="spawn.php" method="post"><input type="submit" class="btn btn-success" value="Set Move"/></form>
     </div> -->
+    <h1>
+        How to play:
+    </h1>
+    <p>
+        Roll the dice by clicking it. You can only see the dice when it's your turn.
+    </p>
+    <p>
+        After rolling the dice, select the pawn you would like to move.
+        If you have no pawns on the board, you need to roll six first to get a pawn on the board.
+    </p>
+    <p>
+        You win the game when all four of your pawns have reached the finish.
+    </p>
+
 </div>
 </div>
 </div>

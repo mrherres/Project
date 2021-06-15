@@ -12,6 +12,7 @@ if ($check["finish"]["b1"] === "inB" and $check["finish"]["b2"] === "inB" and $c
     $check2["information"]["status"] = "1";
     $check2["player1"]["status"] = "unready";
     $check2["player2"]["status"] = "unready";
+    $check2["information"]["gamestatus"] = "waiting";
 
     $check["finish"]["b1"] = "empty";
     $check["finish"]["b2"] = "empty";
@@ -40,6 +41,7 @@ elseif ($check["finish"]["g1"] === "inG" and $check["finish"]["g2"] === "inG" an
     $check2["information"]["status"] = "1";
     $check2["player1"]["status"] = "unready";
     $check2["player2"]["status"] = "unready";
+    $check2["information"]["gamestatus"] = "waiting";
 
     $check["finish"]["b1"] = "empty";
     $check["finish"]["b2"] = "empty";
