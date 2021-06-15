@@ -257,18 +257,10 @@ $(function() {
 })();
 
 (function worker4() {
-    // Denk dat dit zo moet werken
-    const abba = window.location.search;
-    const urlParams = new URLSearchParams(abba);
-    const pname = urlParams.get('name');
-    const pturn = urlParams.get('turn');
     let request = $.ajax({
         url: "http://localhost/Project/scripts/finish.php",
-        success: function (data) {
-            if (data === "win") {
-                console.log("returning")
-                document.location.href = "http://localhost/Project/main.php?name=" + pname + '&turn=' + pturn;
-            }
+        success: function () {
+            console.log();
         },
         complete: function () {
             // Schedule the next request when the current one's complete
