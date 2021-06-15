@@ -256,10 +256,10 @@ $(function() {
     });
 })();
 
-$(function worker4() {
+(function worker4() {
     // Denk dat dit zo moet werken
     let request = $.ajax({
-        url: "http://localhost/Project/finish.php",
+        url: "http://localhost/Project/scripts/finish.php",
         success: function () {
             request.done(function (data) {
                 console.log(data);
