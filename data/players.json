@@ -1,14 +1,17 @@
 {
     "player1": {
         "name": "Henk",
-        "wins": 6,
-        "status": "ready",
+        "wins": 9,
+        "status": "unready",
         "turn": 1
     },
     "player2": {
         "name": "Henk2",
-        "wins": 5,
-        "status": "ready",
+        "wins": 6,
+        "status": "unready",
         "turn": 2
+    },
+    "information": {
+        "status": "1"
     }
 }

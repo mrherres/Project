@@ -9,7 +9,9 @@ if ($check["finish"]["b1"] === "inB" and $check["finish"]["b2"] === "inB" and $c
 
     $check2["player1"]["wins"] ++;
 
-    $check["information"]["status"] = "1";
+    $check2["information"]["status"] = "1";
+    $check2["player1"]["status"] = "unready";
+    $check2["player2"]["status"] = "unready";
 
     $check["finish"]["b1"] = "empty";
     $check["finish"]["b2"] = "empty";
@@ -30,11 +32,14 @@ if ($check["finish"]["b1"] === "inB" and $check["finish"]["b2"] === "inB" and $c
     file_put_contents('../data/gamestate.json', $json_object);
     $json_object2 = json_encode($check2, JSON_PRETTY_PRINT);
     file_put_contents('../data/players.json', $json_object2);
+    echo "win";
 }
-elseif ($check["finish"]["g1"] === "inG" and $check["finish"]["g2"] === "inG" and $check["finish"]["g3"] === "inG" and $check["finish"]["g4"]=== "inG" ){
-    $check2["player2"]["wins"] ++;
+elseif ($check["finish"]["g1"] === "inG" and $check["finish"]["g2"] === "inG" and $check["finish"]["g3"] === "inG" and $check["finish"]["g4"]=== "inG" ) {
+    $check2["player2"]["wins"]++;
 
-    $check["information"]["status"] = "1";
+    $check2["information"]["status"] = "1";
+    $check2["player1"]["status"] = "unready";
+    $check2["player2"]["status"] = "unready";
 
     $check["finish"]["b1"] = "empty";
     $check["finish"]["b2"] = "empty";
@@ -55,4 +60,8 @@ elseif ($check["finish"]["g1"] === "inG" and $check["finish"]["g2"] === "inG" an
     file_put_contents('../data/gamestate.json', $json_object);
     $json_object2 = json_encode($check2, JSON_PRETTY_PRINT);
     file_put_contents('../data/players.json', $json_object2);
+    echo "win";
 }
+
+else
+    echo "no-win";
