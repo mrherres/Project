@@ -9,10 +9,9 @@ if ($check["finish"]["b1"] === "inB" and $check["finish"]["b2"] === "inB" and $c
 
     $check2["player1"]["wins"] ++;
 
-    $check2["information"]["status"] = "1";
-    $check2["player1"]["status"] = "ready";
+    $check["information"]["status"] = "1";
+    $check2["player1"]["status"] = "unready";
     $check2["player2"]["status"] = "unready";
-    $check2["information"]["gamestatus"] = "waiting";
 
     $check["finish"]["b1"] = "empty";
     $check["finish"]["b2"] = "empty";
@@ -38,7 +37,7 @@ if ($check["finish"]["b1"] === "inB" and $check["finish"]["b2"] === "inB" and $c
 elseif ($check["finish"]["g1"] === "inG" and $check["finish"]["g2"] === "inG" and $check["finish"]["g3"] === "inG" and $check["finish"]["g4"]=== "inG" ) {
     $check2["player2"]["wins"]++;
 
-    $check2["information"]["status"] = "1";
+    $check["information"]["status"] = "1";
     $check2["player1"]["status"] = "unready";
     $check2["player2"]["status"] = "ready";
 
