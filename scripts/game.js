@@ -277,7 +277,7 @@ $(function() {
             $('#player1Name').html(data["player1"].name);
             $('#player2Name').html(data["player2"].name);
             $('#wins1').html(data["player1"].wins);
-            $('wins2').html(data["player2"].wins);
+            $('#wins2').html(data["player2"].wins);
         },
         error: function() {
             $('#player1Name').html("Not Available");
