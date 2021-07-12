@@ -2,7 +2,7 @@
     "player1": {
         "name": "Twan",
         "wins": 0,
-        "status": "unready",
+        "status": "ready",
         "turn": 1
     },
     "player2": {

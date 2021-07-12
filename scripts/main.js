@@ -1,36 +1,8 @@
 $(function() {
-    setInterval(worker2, 200);
+    setInterval(worker1, 200);
 });
 
-
-
-(function worker1() {
-    $.ajax({
-        url: 'data/players.json',
-        success: function(data) {
-            $('#player1Name').html(data["player1"].name);
-            $('#player2Name').html(data["player2"].name);
-            const abba = window.location.search;
-            const urlParams = new URLSearchParams(abba);
-            const pname = urlParams.get('name');
-            if(data["player1"].status === "ready" && data["player2"].status === "ready"){
-                if(data["player1"].name === pname){
-                    document.location.href = "http://localhost/Project/game.php?name=" + pname + "&turn=" + 1;
-                }
-                else{document.location.href = "http://localhost/Project/game.php?name=" + pname + "&turn=" + 2;}
-            }
-        },
-        error: function() {
-            $('#player1Name').html("Not Available");
-        },
-        complete: function() {
-            // Schedule the next request when the current one's complete
-            setTimeout(worker1, 2000);
-        }
-    });
-})();
-
-function worker2() {
+function worker1() {
     $.ajax({
         url: 'scripts/getPlayers.php',
         method: 'POST',
@@ -40,6 +12,8 @@ function worker2() {
             const abba = window.location.search;
             const urlParams = new URLSearchParams(abba);
             const pname = urlParams.get('name');
+            $('#player1Name').html(data["player1"].name);
+            $('#player2Name').html(data["player2"].name);
             if (data["player1"].status === "unready") {
                 $("#status1").empty();
                 $("#status1").html('<button class="btn btn-danger" disabled>Not Ready</button>');
@@ -56,5 +30,10 @@ function worker2() {
                 $("#status2").empty();
                 $("#status2").html('<button class="btn btn-success" disabled>Ready</button>');
             }
-            })
+            if(data["player1"].status === "ready" && data["player2"].status === "ready"){
+                if(data["player1"].name === pname){
+                    document.location.href = "http://localhost/Project/game.php?name=" + pname + "&turn=" + 1;
+                }
+                else{document.location.href = "http://localhost/Project/game.php?name=" + pname + "&turn=" + 2;}
+            }})
         }
