@@ -6,9 +6,9 @@
         "turn": 1
     },
     "player2": {
-        "name": "Henk",
+        "name": "Pietje",
         "wins": 0,
-        "status": "unready",
+        "status": "ready",
         "turn": 2
     }
 }
