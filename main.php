@@ -4,7 +4,7 @@ $page_title = 'Mens Erger Je Niet';
 #$navigation = Array(
     #'active' => 'Main',
     #'items' => Array(
-        #'Simple Form' => '/Project/simple_form.php'
+        #'Simple Form' => '/Project/index.php'
     #)
 #);
 include __DIR__ . '/tpl/head.php';
@@ -15,7 +15,6 @@ $getName = $_GET['name'];
 
 <div class="welcome">
     <h1> Welcome! </h1>
-    <button class="btn btn-warning" id="reset">Reset Player</button>
     <h2> Current players are:</h2>
     <table class="table">
         <tr>
@@ -46,9 +45,12 @@ $getName = $_GET['name'];
             </td>
         </tr>
     </table>
-    <!--<div>
-        <form action="spawn.php" method="post"><input type="submit" class="btn btn-success" value="Set Move"/></form>
-    </div> -->
+    <form action="scripts/ready.php" method="post">
+        <input type="hidden" name="player" value="<?php echo $_GET["name"] ?>" style="display: none"/>
+        <input type="submit" class="btn btn-warning" value="Click here if you want to (un)ready yourself!"/>
+    </form>
+    </br>
+    <button class="btn btn-warning" id="reset">Reset Player</button>
     <h1>
         How to play:
     </h1>

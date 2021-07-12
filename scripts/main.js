@@ -1,3 +1,9 @@
+$(function() {
+    setInterval(worker2, 200);
+});
+
+
+
 (function worker1() {
     $.ajax({
         url: 'data/players.json',
@@ -24,54 +30,31 @@
     });
 })();
 
-(function worker3() {
+function worker2() {
     $.ajax({
-        url: 'data/players.json',
-        success: function(data) {
+        url: 'scripts/getPlayers.php',
+        method: 'POST',
+        dataType: "json"
+    })
+        .done(function (data) {
             const abba = window.location.search;
             const urlParams = new URLSearchParams(abba);
             const pname = urlParams.get('name');
-            if(pname === data["player1"].name) {
-                if (data["player1"].status === "unready") {
-                    $("#status1").empty();
-                    $("#status1").html('<form action="ready1.php" method="post"><input type="submit" class="btn btn-danger" value="Not Ready"/></form>');
-                } else if (data["player1"].status === "ready") {
-                    $("#status1").empty();
-                    $("#status1").html('<form action="ready1.php" method="post"><input type="submit" class="btn btn-success" value="Ready"/></form>');
-                }
-                if (data["player2"].status === "unready") {
-                    $("#status2").empty();
-                    $("#status2").html('<form action="ready1.php" method="post"><input type="submit" class="btn btn-danger" value="Not Ready" disabled/></form>');
-                }
-                else if (data["player2"].status === "ready") {
-                    $("#status2").empty();
-                    $("#status2").html('<form action="ready1.php" method="post"><input type="submit" class="btn btn-success" value="Ready" disabled/></form>');
-                }
+            if (data["player1"].status === "unready") {
+                $("#status1").empty();
+                $("#status1").html('<button class="btn btn-danger" disabled>Not Ready</button>');
             }
-            else{
-                    if (data["player2"].status === "unready") {
-                        $("#status2").empty();
-                        $("#status2").html('<form action="ready2.php" method="post"><input type="submit" class="btn btn-danger" value="Not Ready"/></form>');
-                    } else if (data["player2"].status === "ready") {
-                        $("#status2").empty();
-                        $("#status2").html('<form action="ready2.php" method="post"><input type="submit" class="btn btn-success" value="Ready"/></form>');
-                    }
-                    if (data["player1"].status === "unready") {
-                        $("#status1").empty();
-                        $("#status1").html('<form action="ready2.php" method="post"><input type="submit" class="btn btn-danger" value="Not Ready" disabled/></form>');
-                    }
-                    else if (data["player1"].status === "ready") {
-                        $("#status1").empty();
-                        $("#status1").html('<form action="ready2.php" method="post"><input type="submit" class="btn btn-success" value="Ready" disabled/></form>');
-                    }
+            else if (data["player1"].status === "ready") {
+                $("#status1").empty();
+                $("#status1").html('<button class="btn btn-success" disabled>Ready</button>');
             }
-        },
-        error: function() {
-            console.log("dikke vette pech");
-        },
-        complete: function() {
-            // Schedule the next request when the current one's complete
-            setTimeout(worker3, 2000);
+            if (data["player2"].status === "unready") {
+                $("#status2").empty();
+                $("#status2").html('<button class="btn btn-danger" disabled>Not Ready</button>');
+            }
+            else if (data["player2"].status === "ready") {
+                $("#status2").empty();
+                $("#status2").html('<button class="btn btn-success" disabled>Ready</button>');
+            }
+            })
         }
-    });
-})();

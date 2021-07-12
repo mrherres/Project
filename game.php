@@ -4,7 +4,7 @@ $page_title = 'Mens Erger Je Niet';
 #$navigation = Array(
 #'active' => 'Main',
 #'items' => Array(
-#'Simple Form' => '/Project/simple_form.php'
+#'Simple Form' => '/Project/index.php'
 #)
 #);
 include __DIR__ . '/tpl/headG.php';

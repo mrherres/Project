@@ -3,7 +3,7 @@ $page_title = "Mens Erger Je Niet";
 //$navigation = Array(
    // 'active' => 'Simple Form',
     //'items' => Array(
-      //  'Simple Form' => '/Project/simple_form.php'
+      //  'Simple Form' => '/Project/index.php'
    // )
 //);
 include __DIR__ . '/tpl/head.php';
@@ -42,7 +42,7 @@ include __DIR__ . '/tpl/body_start.php';
 ?>
 
     <h1>Please enter your name</h1>
-    <form name="myForm" id="form" action="simple_form.php" method="get" novalidate>
+    <form name="myForm" id="form" action="index.php" method="get" novalidate>
         <label for="name">Name</label>
         <input class="form-control" type="text" id="name" name="name" placeholder="Jan Jansen" required>
         <button class="btn btn-primary" type="submit">Submit</button>

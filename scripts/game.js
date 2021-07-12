@@ -246,7 +246,7 @@ $(function() {
         url: 'data/players.json',
         success: function (data) {
             if(data["player1"]["status"] === "unready" && data["player2"]["status"] === "unready"){
-                document.location.href = "http://localhost/Project/simple_form.php";
+                document.location.href = "../index.php";
             }
         },
         complete: function() {
