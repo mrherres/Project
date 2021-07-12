@@ -2,7 +2,7 @@
 $player = $_POST['player'];
 $checkFile = file_get_contents("../data/players.json");
 $check = json_decode($checkFile, true);
-if($player === "Twan") {
+if($player === $check["player1"]["name"]) {
     if ($check["player1"]["status"] === "unready") {
         $check["player1"]["status"] = "ready";
     } else {

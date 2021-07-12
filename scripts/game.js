@@ -1,4 +1,9 @@
 $(function() {
+    setInterval(worker3, 400);
+    setInterval(worker4, 400);
+});
+
+$(function() {
 
     $('#dice').click(function () {
         const abba = window.location.search;
@@ -241,50 +246,30 @@ $(function() {
     });
 });
 
-(function worker3() {
+function worker3() {
     $.ajax({
-        url: 'data/players.json',
-        success: function (data) {
-            if(data["player1"]["status"] === "unready" && data["player2"]["status"] === "unready"){
-                document.location.href = "../index.php";
+        url: 'scripts/getPlayers.php',
+        method: 'POST',
+        dataType: "json"
+    })
+        .done(function (data) {
+            if (data["player1"]["status"] === "unready" && data["player2"]["status"] === "unready") {
+                document.location.href = "../Project/index.php";
             }
-        },
-        complete: function() {
-            // Schedule the next request when the current one's complete
-            setTimeout(worker3, 3000);
-        }
-    });
-})();
-
-(function worker4() {
-    let request = $.ajax({
-        url: "http://localhost/Project/scripts/finish.php",
-        success: function () {
-            console.log();
-        },
-        complete: function () {
-            // Schedule the next request when the current one's complete
-            setTimeout(worker4, 3000);
-        }
-    });
-})();
-
-
-(function worker1() {
-    $.ajax({
-        url: 'data/players.json',
-        success: function(data) {
             $('#player1Name').html(data["player1"].name);
             $('#player2Name').html(data["player2"].name);
             $('#wins1').html(data["player1"].wins);
             $('#wins2').html(data["player2"].wins);
-        },
-        error: function() {
-            $('#player1Name').html("Not Available");
-        },
-        complete: function() {
-            // Schedule the next request when the current one's complete
-            setTimeout(worker1, 2000);
-        }
-    });
-})();
+        });
+}
+
+function worker4() {
+    $.ajax({
+        url: 'scripts/finish.php',
+        method: 'POST',
+        dataType: "json"
+    })
+        .done(function () {
+            console.log("Someone won")
+        });
+}
