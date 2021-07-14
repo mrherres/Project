@@ -16,38 +16,6 @@ $getName = $_GET['name'];
 #</div>
 #</div> -->
 
-<div class="welcome">
-    <h2> Current players are:</h2>
-    <table class="table">
-        <tr>
-            <th>Player</th>
-            <th>Team Color</th>
-            <th>Wins</th>
-        </tr>
-        <tr>
-            <td id="player1Name"></td>
-            <td class="teamBlue">Blue</td>
-            <td id="wins1">
-                <?
-                $checkFile = file_get_contents("data/players.json");
-                $check = json_decode($checkFile, true);
-                echo $check["player1"]["wins"]
-                ?>
-            </td>
-        </tr>
-        <tr>
-            <td id="player2Name"></td>
-            <td class="teamGreen">Green</td>
-            <td id="wins2">
-                <?
-                $checkFile = file_get_contents("data/players.json");
-                $check = json_decode($checkFile, true);
-                echo $check["player2"]["wins"]
-                ?>
-            </td>
-        </tr>
-    </table>
-
 <div id="dice-text">
     Click dice to roll!
 </div>
@@ -216,4 +184,37 @@ $getName = $_GET['name'];
 
 <div>
     <p id="checkTurn"></p>
+</div>
+
+<div class="sidenav">
+    <h5> Current players are:</h5>
+    <table class="table">
+        <tr>
+            <th>Player</th>
+            <td id="player1Name"></td>
+            <td id="player2Name"></td>
+        </tr>
+        <tr>
+            <th>Color</th>
+            <td class="teamBlue">Blue</td>
+            <td class="teamGreen">Green</td>
+        </tr>
+        <tr>
+            <th>Wins</th>
+            <td id="wins1">
+                <?
+                $checkFile = file_get_contents("data/players.json");
+                $check = json_decode($checkFile, true);
+                echo $check["player1"]["wins"]
+                ?>
+            </td>
+            <td id="wins2">
+                <?
+                $checkFile = file_get_contents("data/players.json");
+                $check = json_decode($checkFile, true);
+                echo $check["player2"]["wins"]
+                ?>
+            </td>
+        </tr>
+    </table>
 </div>

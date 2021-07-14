@@ -211,3 +211,29 @@ footer {
     color: blue;
     font-weight: bold;
 }
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 150px;
+    left: 10px;
+    background: white;
+    overflow-x: hidden;
+    padding: 8px 0;
+}
+
+.main {
+    margin-left: 140px; /* Same width as the sidebar + left position in px */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
