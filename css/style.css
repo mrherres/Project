@@ -197,3 +197,7 @@ footer {
     font-size: 16px;
     border: none;
 }
+
+#checkTurn{
+    display: none;
+}

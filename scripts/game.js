@@ -60,8 +60,11 @@ $(function() {
         const throwns = thrown.slice(-1);
         const pname = urlParams.get('name');
         const pturn = urlParams.get('turn');
+        const playerturn = $("#checkTurn").html();
+        console.log(playerturn);
+
         let Pos = $(this).attr("id");
-        if(pturn === "1" && $(this).hasClass("pawnb")){
+        if(playerturn === "1" && $(this).hasClass("pawnb")){
             console.log(Pos.substring(1));
             //console.log(throwns);
             let currentPosB = Pos.substring(1);
@@ -81,7 +84,7 @@ $(function() {
                 console.log(data);
             });
         }
-        else if(pturn === "2" && $(this).hasClass("pawng")){
+        else if(playerturn === "2" && $(this).hasClass("pawng")){
             let newPos = $(this).html();
             console.log(newPos);
             //console.log(throwns);
@@ -149,6 +152,9 @@ function worker5() {
             const abba = window.location.search;
             const urlParams = new URLSearchParams(abba);
             const pturn = urlParams.get('turn');
+            const jsonturn = data["information"]["status"];
+
+            $("#checkTurn").html(jsonturn);
 
             if (data['information'].status === pturn) {
                 $("#dice").css("display", "inline");

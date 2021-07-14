@@ -210,3 +210,7 @@ $getName = $_GET['name'];
     <button class="round_yellow" id="home_13"></button>
     <button class="round_yellow" id="home_14"></button>
 </div>
+
+<div>
+    <p id="checkTurn"></p>
+</div>

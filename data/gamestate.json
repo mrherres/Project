@@ -10,7 +10,7 @@
         "p4": "empty",
         "p5": "empty",
         "p6": "empty",
-        "p7": "empty",
+        "p7": "green",
         "p8": "empty",
         "p9": "empty",
         "p10": "empty",
@@ -36,7 +36,7 @@
         "p30": "empty",
         "p31": "empty",
         "p32": "empty",
-        "p33": "empty",
+        "p33": "blue",
         "p34": "empty",
         "p35": "empty",
         "p36": "empty",
@@ -56,7 +56,7 @@
         "g4": "empty"
     },
     "pawns": {
-        "blue": 0,
-        "green": 0
+        "blue": 1,
+        "green": 1
     }
 }
