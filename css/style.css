@@ -197,3 +197,13 @@ footer {
     font-size: 16px;
     border: none;
 }
+
+.teamGreen {
+    color: green;
+    font-weight: bold;
+}
+
+.teamBlue {
+    color: blue;
+    font-weight: bold;
+}
