@@ -1,7 +1,7 @@
 <?php
-$checkFile = file_get_contents("data/players.json");
+$checkFile = file_get_contents("../data/players.json");
 $check = json_decode($checkFile, true);
-$checkFile2 = file_get_contents("data/gamestate.json");
+$checkFile2 = file_get_contents("../data/gamestate.json");
 $check2 = json_decode($checkFile2, true);
 
 $check["player1"]["name"] = "";
@@ -31,5 +31,5 @@ for ($x = 1; $x <= 40; $x++) {
 
 $json_object = json_encode($check, JSON_PRETTY_PRINT);
 $json_object2 = json_encode($check2, JSON_PRETTY_PRINT);
-file_put_contents('data/players.json', $json_object);
-file_put_contents('data/gamestate.json', $json_object2);
+file_put_contents('../data/players.json', $json_object);
+file_put_contents('../data/gamestate.json', $json_object2);

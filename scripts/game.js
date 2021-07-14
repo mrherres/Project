@@ -16,7 +16,7 @@ $(function() {
         $("#dice-text").html("You rolled: " + dice_result);
         if(dice_result === 6){
             let request = $.ajax({
-                url: "http://localhost/Project/spawn.php",
+                url: "scripts/spawn.php",
                 method: "POST",
                 data: {
                     "rolled" : dice_result,
@@ -37,7 +37,7 @@ $(function() {
         else {
             console.log("You need a 6");
             let request = $.ajax({
-                url: "http://localhost/Project/notSix.php",
+                url: "scripts/notSix.php",
                 method: "POST",
                 data: {
                     "rolled" : dice_result,
@@ -67,7 +67,7 @@ $(function() {
             let currentPosB = Pos.substring(1);
             let currentPosG = "00";
             let request = $.ajax({
-                url: "http://localhost/Project/move.php",
+                url: "scripts/move.php",
                 method: "POST",
                 data: {
                     "rolled": throwns,
@@ -88,7 +88,7 @@ $(function() {
             let currentPosB = "00";
             let currentPosG = Pos.substring(1);
             let request = $.ajax({
-                url: "http://localhost/Project/move.php",
+                url: "scripts/move.php",
                 method: "POST",
                 data: {
                     "rolled": throwns,
@@ -107,7 +107,7 @@ $(function() {
 
 $(function() {
     $('.reset-button').click(function () {
-        $.get('http://localhost/Project/reset.php', function (data) {
+        $.get('scripts/reset.php', function (data) {
             console.log(data)
         })
     });
@@ -170,7 +170,7 @@ function worker5() {
                 if (item === "blue" && $("#"+i).hasClass("round_green pawng")) {
                     $("#"+i).addClass("round_blue pawnb inPlay").removeClass("round_green pawng");
                     let request = $.ajax({
-                        url: "http://localhost/Project/throw.php",
+                        url: "scripts/throw.php",
                         method: "POST",
                         data: {
                             "color": item
@@ -187,7 +187,7 @@ function worker5() {
                 else if (item === "green" && $("#"+i).hasClass("round_blue pawnb")){
                     $("#"+i).addClass("round_green pawng inPlay").removeClass("round_blue pawnb");
                     let request = $.ajax({
-                        url: "http://localhost/Project/throw.php",
+                        url: "scripts/throw.php",
                         method: "POST",
                         data: {
                             "color": item

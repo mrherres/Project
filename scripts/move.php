@@ -1,5 +1,5 @@
 <?php
-$checkFile = file_get_contents("data/players.json");
+$checkFile = file_get_contents("../data/players.json");
 $check = json_decode($checkFile, true);
 if($check["player1"]["name"] === $_POST["name"]){
     $POSB = $_POST["posB"];
@@ -7,7 +7,7 @@ if($check["player1"]["name"] === $_POST["name"]){
     if($NEXT > 40){
         $NEXT = $NEXT - 40;
     }
-    $checkFile2 = file_get_contents("data/gamestate.json");
+    $checkFile2 = file_get_contents("../data/gamestate.json");
     $check2 = json_decode($checkFile2, true);
     if($NEXT === 29 || $NEXT === 28 || $NEXT === 30){
         if($check2["finish"]["b1"] === "empty"){
@@ -40,7 +40,7 @@ if($check["player1"]["name"] === $_POST["name"]){
     }
 
     $json_object = json_encode($check2, JSON_PRETTY_PRINT);
-    file_put_contents('data/gamestate.json', $json_object);
+    file_put_contents('../data/gamestate.json', $json_object);
 
     $newdata = ['prev' => $POSB,'max' => $NEXT];
     header("Content-Type: application/json");
@@ -54,7 +54,7 @@ else{
         $NEXT = $NEXT - 40;
     }
 
-    $checkFile2 = file_get_contents("data/gamestate.json");
+    $checkFile2 = file_get_contents("../data/gamestate.json");
     $check2 = json_decode($checkFile2, true);
     if($NEXT === 40 || $NEXT === 39 || $NEXT === 38){
         if($check2["finish"]["g1"] === "empty"){
@@ -86,7 +86,7 @@ else{
     }
 
     $json_object = json_encode($check2, JSON_PRETTY_PRINT);
-    file_put_contents('data/gamestate.json', $json_object);
+    file_put_contents('../data/gamestate.json', $json_object);
 
     $newdata = ['prev' => $POSG,'max' => $NEXT];
     header("Content-Type: application/json");
