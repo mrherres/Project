@@ -201,3 +201,13 @@ footer {
 #checkTurn{
     display: none;
 }
+
+.teamGreen {
+    color: green;
+    font-weight: bold;
+}
+
+.teamBlue {
+    color: blue;
+    font-weight: bold;
+}
