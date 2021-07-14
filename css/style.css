@@ -173,14 +173,17 @@ footer {
 }
 
 #dice-text {
+    width: 100%;
+    text-align: center;
     margin-top: 10px;
     font-weight: bold;
     color: darkgreen;
-    font-size: 18px;
+    font-size: 36px;
 }
 
 #dice-roll {
-    width:100px;
+    width:100%;
+    text-align: center;
 }
 
 #dice {

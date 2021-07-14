@@ -8,13 +8,13 @@ $page_title = 'Mens Erger Je Niet';
 #)
 #);
 include __DIR__ . '/tpl/headG.php';
-include __DIR__ . '/tpl/body_start.php';
+#include __DIR__ . '/tpl/body_start.php';
 $getName = $_GET['name'];
 ?>
 
-</div>
-</div>
-</div>
+<!--</div>
+#</div>
+#</div> -->
 
 <div class="welcome">
     <h2> Current players are:</h2>
@@ -45,10 +45,11 @@ $getName = $_GET['name'];
         </tr>
     </table>
 
+<div id="dice-text">
+    Click dice to roll!
+</div>
+
 <div id="dice-roll">
-    <div id="dice-text">
-        Click dice to roll!
-    </div>
     <input type="image" class="dice" id="dice" src="img/dice6.png">
 </div>
 
