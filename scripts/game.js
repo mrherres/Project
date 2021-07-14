@@ -105,11 +105,57 @@ $(function() {
     });
 });
 
-(function worker2() {
+$(function() {
+    $('.reset-button').click(function () {
+        $.get('http://localhost/Project/reset.php', function (data) {
+            console.log(data)
+        })
+    });
+});
+
+// This function checks when to go back to the main screen (when the reset button is pressed)
+// It also tracks the names and wins of the players
+function worker3() {
     $.ajax({
-        url: 'data/gamestate.json',
-        success: function(data) {
-            //let i;
+        url: 'scripts/getPlayers.php',
+        method: 'POST',
+        dataType: "json"
+    })
+        .done(function (data) {
+            if (data["player1"]["status"] === "unready" && data["player2"]["status"] === "unready") {
+                document.location.href = "../Project/index.php";
+            }
+            $('#player1Name').html(data["player1"].name);
+            $('#player2Name').html(data["player2"].name);
+            $('#wins1').html(data["player1"].wins);
+            $('#wins2').html(data["player2"].wins);
+        });
+}
+
+
+// This function checks multiple things;
+//  - Displaying/hiding the die
+//  - Displaying the pawn(s) if they should be in the base
+//  - Display and update the movements of the pawns
+//  - Remove/add pawns from/to their base, when they are played or thrown off
+//    and adjust the json accordingly
+function worker5() {
+    $.ajax({
+        url:"scripts/getGamestate.php",
+        method:"POST",
+        dataType: "json"
+    })
+        .done(function (data){
+            const abba = window.location.search;
+            const urlParams = new URLSearchParams(abba);
+            const pturn = urlParams.get('turn');
+
+            if (data['information'].status === pturn) {
+                $("#dice").css("display", "inline");
+            }
+            else{
+                $("#dice").hide();
+            }
             for (let i in data["finish"]){
                 let item = data["finish"][i];
                 if(item === "inB") {
@@ -117,6 +163,46 @@ $(function() {
                 }
                 else if(item === "inG"){
                     $("#"+i).addClass("round_green pawng")
+                }
+            }
+            for (let i in data["field"]) {
+                let item = data["field"][i];
+                if (item === "blue" && $("#"+i).hasClass("round_green pawng")) {
+                    $("#"+i).addClass("round_blue pawnb inPlay").removeClass("round_green pawng");
+                    let request = $.ajax({
+                        url: "http://localhost/Project/throw.php",
+                        method: "POST",
+                        data: {
+                            "color": item
+                        },
+                        dataType: "json"
+                    });
+                    request.done(function (data) {
+                        console.log(data);
+                    });
+                }
+                else if (item === "blue") {
+                    $("#"+i).addClass("round_blue pawnb inPlay").removeClass("round_green");
+                }
+                else if (item === "green" && $("#"+i).hasClass("round_blue pawnb")){
+                    $("#"+i).addClass("round_green pawng inPlay").removeClass("round_blue pawnb");
+                    let request = $.ajax({
+                        url: "http://localhost/Project/throw.php",
+                        method: "POST",
+                        data: {
+                            "color": item
+                        },
+                        dataType: "json"
+                    });
+                    request.done(function (data) {
+                        console.log(data);
+                    });
+                }
+                else if(item === "green") {
+                    $("#"+i).addClass("round_green pawng inPlay");
+                }
+                else if(item === "empty") {
+                    $("#"+i).removeClass("round_blue round_green pawnb pawng inPlay");
                 }
             }
             if(data["pawns"]["blue"] === 4){
@@ -181,99 +267,10 @@ $(function() {
                 $("#home_7").addClass("round_green").removeClass("round");
                 $("#home_8").addClass("round_green").removeClass("round");
             }
-        },
-        complete: function() {
-            // Schedule the next request when the current one's complete
-            setTimeout(worker2, 3000);
-        }
-    });
-})();
-
-$(function() {
-    $('.reset-button').click(function () {
-        $.get('http://localhost/Project/reset.php', function (data) {
-            console.log(data)
-        })
-    });
-});
-
-function worker3() {
-    $.ajax({
-        url: 'scripts/getPlayers.php',
-        method: 'POST',
-        dataType: "json"
-    })
-        .done(function (data) {
-            if (data["player1"]["status"] === "unready" && data["player2"]["status"] === "unready") {
-                document.location.href = "../Project/index.php";
-            }
-            $('#player1Name').html(data["player1"].name);
-            $('#player2Name').html(data["player2"].name);
-            $('#wins1').html(data["player1"].wins);
-            $('#wins2').html(data["player2"].wins);
         });
 }
 
-function worker5() {
-    $.ajax({
-        url:"scripts/getGamestate.php",
-        method:"POST",
-        dataType: "json"
-    })
-        .done(function (data){
-            const abba = window.location.search;
-            const urlParams = new URLSearchParams(abba);
-            const pturn = urlParams.get('turn');
-
-            if (data['information'].status === pturn) {
-                $("#dice").css("display", "inline");
-            }
-            else{
-                $("#dice").hide();
-            }
-            for (let i in data["field"]) {
-                let item = data["field"][i];
-                if (item === "blue" && $("#"+i).hasClass("round_green pawng")) {
-                    $("#"+i).addClass("round_blue pawnb inPlay").removeClass("round_green pawng");
-                    let request = $.ajax({
-                        url: "http://localhost/Project/throw.php",
-                        method: "POST",
-                        data: {
-                            "color": item
-                        },
-                        dataType: "json"
-                    });
-                    request.done(function (data) {
-                        console.log(data);
-                    });
-                }
-                else if (item === "blue") {
-                    $("#"+i).addClass("round_blue pawnb inPlay").removeClass("round_green");
-                }
-                else if (item === "green" && $("#"+i).hasClass("round_blue pawnb")){
-                    $("#"+i).addClass("round_green pawng inPlay").removeClass("round_blue pawnb");
-                    let request = $.ajax({
-                        url: "http://localhost/Project/throw.php",
-                        method: "POST",
-                        data: {
-                            "color": item
-                        },
-                        dataType: "json"
-                    });
-                    request.done(function (data) {
-                        console.log(data);
-                    });
-                }
-                else if(item === "green") {
-                    $("#"+i).addClass("round_green pawng inPlay");
-                }
-                else if(item === "empty") {
-                    $("#"+i).removeClass("round_blue round_green pawnb pawng inPlay");
-                }
-            }
-        });
-}
-
+// This function will check whether or not someone has 4 pawns in their base
 function worker4() {
     $.ajax({
         url: 'scripts/finish.php',

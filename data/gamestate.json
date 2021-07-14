@@ -1,18 +1,18 @@
 {
     "information": {
-        "status": "1",
+        "status": "2",
         "gamestatus": "playing"
     },
     "field": {
-        "p1": "green",
+        "p1": "empty",
         "p2": "blue",
         "p3": "empty",
         "p4": "empty",
-        "p5": "green",
+        "p5": "empty",
         "p6": "empty",
-        "p7": "green",
+        "p7": "empty",
         "p8": "empty",
-        "p9": "empty",
+        "p9": "green",
         "p10": "empty",
         "p11": "empty",
         "p12": "empty",
@@ -27,7 +27,7 @@
         "p21": "empty",
         "p22": "empty",
         "p23": "empty",
-        "p24": "blue",
+        "p24": "empty",
         "p25": "empty",
         "p26": "empty",
         "p27": "empty",
@@ -46,7 +46,7 @@
         "p40": "empty"
     },
     "finish": {
-        "b1": "empty",
+        "b1": "inB",
         "b2": "empty",
         "b3": "empty",
         "b4": "empty",
@@ -57,6 +57,6 @@
     },
     "pawns": {
         "blue": 2,
-        "green": 6
+        "green": 1
     }
 }
