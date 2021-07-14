@@ -4,13 +4,13 @@
         "gamestatus": "playing"
     },
     "field": {
-        "p1": "empty",
-        "p2": "empty",
+        "p1": "green",
+        "p2": "blue",
         "p3": "empty",
         "p4": "empty",
-        "p5": "empty",
+        "p5": "green",
         "p6": "empty",
-        "p7": "empty",
+        "p7": "green",
         "p8": "empty",
         "p9": "empty",
         "p10": "empty",
@@ -27,7 +27,7 @@
         "p21": "empty",
         "p22": "empty",
         "p23": "empty",
-        "p24": "empty",
+        "p24": "blue",
         "p25": "empty",
         "p26": "empty",
         "p27": "empty",
@@ -50,13 +50,13 @@
         "b2": "empty",
         "b3": "empty",
         "b4": "empty",
-        "g1": "empty",
+        "g1": "inG",
         "g2": "empty",
         "g3": "empty",
         "g4": "empty"
     },
     "pawns": {
-        "blue": 0,
-        "green": 0
+        "blue": 2,
+        "green": 6
     }
 }
