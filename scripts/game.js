@@ -5,7 +5,6 @@ $(function() {
 });
 
 $(function() {
-
     $('#dice').click(function () {
         const abba = window.location.search;
         const urlParams = new URLSearchParams(abba);
@@ -16,6 +15,7 @@ $(function() {
         $("#dice-text").html("You rolled: " + dice_result);
         $("#dice-text").css("visibility", "visible");
         if(dice_result === 6){
+            $("#six").css("visibility", "hidden")
             let request = $.ajax({
                 url: "scripts/spawn.php",
                 method: "POST",
@@ -37,6 +37,7 @@ $(function() {
         }
         else {
             console.log("You need a 6");
+            $("#six").css("visibility", "visible")
             let request = $.ajax({
                 url: "scripts/notSix.php",
                 method: "POST",

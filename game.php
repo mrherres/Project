@@ -222,4 +222,7 @@ $getName = $_GET['name'];
     <div id="dice-text">
         Click dice to roll!
     </div>
+    <div id="six">
+        You need a six!
+    </div>
 </div>

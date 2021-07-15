@@ -251,3 +251,9 @@ body {
 #yourturn {
     font-weight: bold;
 }
+
+#six {
+    visibility: hidden;
+    font-weight: bold;
+    color: red;
+}
