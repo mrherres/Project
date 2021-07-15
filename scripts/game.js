@@ -14,6 +14,7 @@ $(function() {
         var dice_result = Math.floor(Math.random() * 6)+1;
         $('#dice').attr('src', "img/dice" + dice_result + ".png")
         $("#dice-text").html("You rolled: " + dice_result);
+        $("#dice-text").css("visibility", "visible");
         if(dice_result === 6){
             let request = $.ajax({
                 url: "scripts/spawn.php",
@@ -161,6 +162,7 @@ function worker5() {
             }
             else{
                 $("#dice").hide();
+                $("#dice-text").css("visibility", "hidden");
             }
             for (let i in data["finish"]){
                 let item = data["finish"][i];

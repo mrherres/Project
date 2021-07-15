@@ -10,7 +10,7 @@
         "p4": "empty",
         "p5": "empty",
         "p6": "empty",
-        "p7": "green",
+        "p7": "empty",
         "p8": "empty",
         "p9": "empty",
         "p10": "empty",
@@ -36,14 +36,15 @@
         "p30": "empty",
         "p31": "empty",
         "p32": "empty",
-        "p33": "blue",
+        "p33": "empty",
         "p34": "empty",
         "p35": "empty",
         "p36": "empty",
         "p37": "empty",
         "p38": "empty",
         "p39": "empty",
-        "p40": "empty"
+        "p40": "empty",
+        "p00": "empty"
     },
     "finish": {
         "b1": "empty",
@@ -56,7 +57,7 @@
         "g4": "empty"
     },
     "pawns": {
-        "blue": 1,
-        "green": 1
+        "blue": 0,
+        "green": 0
     }
 }

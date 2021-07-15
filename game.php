@@ -16,14 +16,6 @@ $getName = $_GET['name'];
 #</div>
 #</div> -->
 
-<div id="dice-text">
-    Click dice to roll!
-</div>
-
-<div id="dice-roll">
-    <input type="image" class="dice" id="dice" src="img/dice6.png">
-</div>
-
 <div class="reset-button btn btn-danger" id="reset" type="button">
     Reset game
 </div>
@@ -217,4 +209,14 @@ $getName = $_GET['name'];
             </td>
         </tr>
     </table>
+</div>
+
+<div class="dice-div">
+    <div id="dice-roll">
+        <input type="image" class="dice" id="dice" src="img/dice6.png">
+    </div>
+
+    <div id="dice-text">
+        Click dice to roll!
+    </div>
 </div>
