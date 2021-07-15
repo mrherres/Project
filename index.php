@@ -30,6 +30,9 @@ include __DIR__ . '/tpl/body_start.php';
             else{
                 $json_file = file_get_contents('data/players.json');
                 $data = json_decode($json_file, true);
+                if ($data['player1']['name'] == $player_name) {
+                    $player_name = $player_name . "(2)";
+                }
                 $data['player2']['name'] = $player_name;
                 $turn = $data['player2']['turn'];
                 $json_object = json_encode($data, JSON_PRETTY_PRINT);
