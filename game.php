@@ -209,6 +209,9 @@ $getName = $_GET['name'];
             </td>
         </tr>
     </table>
+    <div id="yourturn">
+        Your turn!
+    </div>
 </div>
 
 <div class="dice-div">

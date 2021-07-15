@@ -159,10 +159,12 @@ function worker5() {
 
             if (data['information'].status === pturn) {
                 $("#dice").css("display", "inline");
+                $("#yourturn").html("Your turn!")
             }
             else{
                 $("#dice").hide();
                 $("#dice-text").css("visibility", "hidden");
+                $("#yourturn").html("Opponent playing!")
             }
             for (let i in data["finish"]){
                 let item = data["finish"][i];

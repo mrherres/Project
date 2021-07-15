@@ -247,3 +247,7 @@ body {
     left: 10px;
     overflow-x: hidden;
 }
+
+#yourturn {
+    font-weight: bold;
+}
