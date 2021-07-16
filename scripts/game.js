@@ -10,7 +10,7 @@ $(function() {
         const abba = window.location.search;
         const urlParams = new URLSearchParams(abba);
         const pname = urlParams.get('name');
-        const pturn = urlParams.get('turn');
+        const playerturn = $("#checkTurn").html();
         var dice_result = Math.floor(Math.random() * 6)+1;
         $('#dice').attr('src', "img/dice" + dice_result + ".png")
         $("#dice-text").html("You rolled: " + dice_result);
@@ -28,10 +28,10 @@ $(function() {
                 console.log(data);
             });
         }
-        else if(pturn === "1" && $(".pawnb").hasClass("inPlay")){
+        else if(playerturn === "1" && $(".pawnb").hasClass("inPlay")){
             console.log("Go on1");
         }
-        else if(pturn === "2" && $(".pawng").hasClass("inPlay")) {
+        else if(playerturn === "2" && $(".pawng").hasClass("inPlay")) {
             console.log("Go on2");
         }
         else {
