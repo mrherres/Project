@@ -142,7 +142,9 @@ footer {
 }
 
 .reset-button{
-    margin-left: 75%;
+    position: fixed;
+    margin-top: 0%;
+    right: 10px;
 }
 
 .top{
@@ -173,16 +175,16 @@ footer {
 }
 
 #dice-text {
-    width: 100%;
+    width: auto;
     text-align: center;
     margin-top: 10px;
     font-weight: bold;
     color: darkgreen;
-    font-size: 36px;
+    font-size: 30px;
 }
 
 #dice-roll {
-    width:100%;
+    width:auto;
     text-align: center;
 }
 
@@ -217,23 +219,41 @@ body {
 }
 
 .sidenav {
-    width: 300px;
+    width: auto;
     position: fixed;
     z-index: 1;
-    top: 150px;
+    top: 50px;
     left: 10px;
-    background: white;
     overflow-x: hidden;
     padding: 8px 0;
 }
 
 .main {
-    margin-left: 140px; /* Same width as the sidebar + left position in px */
-    font-size: 28px; /* Increased text to enable scrolling */
+    margin-left: 140px;
+    font-size: 28px;
     padding: 0px 10px;
 }
 
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+}
+
+.dice-div {
+    width: auto;
+    position:fixed;
+    z-index: 1;
+    top: 50%;
+    left: 10px;
+    overflow-x: hidden;
+}
+
+#yourturn {
+    font-weight: bold;
+}
+
+#six {
+    visibility: hidden;
+    font-weight: bold;
+    color: red;
 }

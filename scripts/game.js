@@ -5,7 +5,6 @@ $(function() {
 });
 
 $(function() {
-
     $('#dice').click(function () {
         const abba = window.location.search;
         const urlParams = new URLSearchParams(abba);
@@ -14,7 +13,9 @@ $(function() {
         var dice_result = Math.floor(Math.random() * 6)+1;
         $('#dice').attr('src', "img/dice" + dice_result + ".png")
         $("#dice-text").html("You rolled: " + dice_result);
+        $("#dice-text").css("visibility", "visible");
         if(dice_result === 6){
+            $("#six").css("visibility", "hidden")
             let request = $.ajax({
                 url: "scripts/spawn.php",
                 method: "POST",
@@ -36,6 +37,7 @@ $(function() {
         }
         else {
             console.log("You need a 6");
+            $("#six").css("visibility", "visible")
             let request = $.ajax({
                 url: "scripts/notSix.php",
                 method: "POST",
@@ -158,9 +160,12 @@ function worker5() {
 
             if (data['information'].status === pturn) {
                 $("#dice").css("display", "inline");
+                $("#yourturn").html("Your turn!")
             }
             else{
                 $("#dice").hide();
+                $("#dice-text").css("visibility", "hidden");
+                $("#yourturn").html("Opponent playing!")
             }
             for (let i in data["finish"]){
                 let item = data["finish"][i];
