@@ -200,6 +200,16 @@ footer {
     border: none;
 }
 
+#square {
+    text-align: center;
+    border: none;
+    font-size: 16px;
+    width: 112px;
+    height: 130px;
+}
+
+
+
 #checkTurn{
     display: none;
 }

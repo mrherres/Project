@@ -217,6 +217,7 @@ $getName = $_GET['name'];
 <div class="dice-div">
     <div id="dice-roll">
         <input type="image" class="dice" id="dice" src="img/dice6.png">
+        <input type="image" id="square" src="img/square.png" disabled>
     </div>
 
     <div id="dice-text">
