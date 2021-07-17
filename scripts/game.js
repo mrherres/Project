@@ -121,14 +121,20 @@ $(function() {
 // This function checks when to go back to the main screen (when the reset button is pressed)
 // It also tracks the names and wins of the players
 function worker3() {
+    const abba = window.location.search;
+    const urlParams = new URLSearchParams(abba);
+    const pname = urlParams.get('name');
     $.ajax({
         url: 'scripts/getPlayers.php',
         method: 'POST',
         dataType: "json"
     })
         .done(function (data) {
-            if (data["player1"]["status"] === "unready" && data["player2"]["status"] === "unready") {
+            if (data["player1"]["status"] === "reset" && data["player2"]["status"] === "reset") {
                 document.location.href = "../Project/index.php";
+            }
+            else if(data["player1"]["status"] === "unready" && data["player2"]["status"] === "unready"){
+                document.location.href = "main.php?name=" + pname
             }
             $('#player1Name').html(data["player1"].name);
             $('#player2Name').html(data["player2"].name);
@@ -174,6 +180,9 @@ function worker5() {
                 }
                 else if(item === "inG"){
                     $("#"+i).addClass("round_green pawng")
+                }
+                else{
+                    $("#"+i).addClass("static_green").removeClass("round_green pawng round_blue pawnb")
                 }
             }
             for (let i in data["field"]) {
@@ -289,6 +298,6 @@ function worker4() {
         dataType: "json"
     })
         .done(function () {
-            console.log("Someone won")
+            console.log("yeet")
         });
 }
