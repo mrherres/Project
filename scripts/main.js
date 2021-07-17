@@ -37,3 +37,11 @@ function worker1() {
                 else{document.location.href = "http://localhost/Project/game.php?name=" + pname + "&turn=" + 2;}
             }})
         }
+
+$(function() {
+    $('.reset-button').click(function () {
+        $.get('scripts/resetPlayer.php', function (data) {
+            console.log(data)
+        })
+    });
+});

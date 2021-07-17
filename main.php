@@ -47,10 +47,13 @@ $getName = $_GET['name'];
     </table>
     <form action="scripts/ready.php" method="post">
         <input type="hidden" name="player" value="<?php echo $_GET["name"] ?>" style="display: none"/>
-        <input type="submit" class="btn btn-warning" value="Click here if you want to (un)ready yourself!"/>
+        <input type="submit" class="btn btn-success" value="Click here if you want to (un)ready yourself"/>
     </form>
     </br>
-    <button class="btn btn-warning" id="reset">Reset Player</button>
+    <form action="scripts/resetPlayer.php" method="post">
+        <input type="hidden" name="player" value="<?php echo $_GET["name"] ?>" style="display: none"/>
+        <input type="submit" class="btn btn-danger" value="Click here if you want to reset yourself"/>
+    </form>
     <h1>
         How to play:
     </h1>
