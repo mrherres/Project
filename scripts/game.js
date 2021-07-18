@@ -11,9 +11,10 @@ $(function() {
         const pname = urlParams.get('name');
         const playerturn = $("#checkTurn").html();
         var dice_result = Math.floor(Math.random() * 6)+1;
-        $('#dice').attr('src', "img/dice" + dice_result + ".png")
+        $('#dice').attr('src', "img/dice" + dice_result + ".png").prop('disabled', true);
         $("#dice-text").html("You rolled: " + dice_result);
         $("#dice-text").css("visibility", "visible");
+        $(".round, .static_blue, .static_green, .static_yellow, .static_red").prop("disabled", false);
         if(dice_result === 6){
             $("#six").css("visibility", "hidden")
             let request = $.ajax({
@@ -169,9 +170,10 @@ function worker5() {
                 $("#yourturn").html("Your turn!")
             }
             else{
-                $("#dice").hide();
+                $("#dice").hide().prop('disabled', false);
                 $("#dice-text").css("visibility", "hidden");
                 $("#yourturn").html("Opponent playing!")
+                $(".round, .static_blue, .static_green, .static_yellow, .static_red").prop("disabled", true);
             }
             for (let i in data["finish"]){
                 let item = data["finish"][i];
