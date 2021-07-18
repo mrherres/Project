@@ -181,6 +181,9 @@ function worker5() {
                 else if(item === "inG"){
                     $("#"+i).addClass("round_green pawng")
                 }
+                else if(i === "b1" || i === "b2" || i === "b3" || i === "b4"){
+                    $("#"+i).addClass("static_blue").removeClass("round_green pawng round_blue pawnb")
+                }
                 else{
                     $("#"+i).addClass("static_green").removeClass("round_green pawng round_blue pawnb")
                 }
