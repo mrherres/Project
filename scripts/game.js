@@ -10,7 +10,7 @@ $(function() {
         const urlParams = new URLSearchParams(abba);
         const pname = urlParams.get('name');
         const playerturn = $("#checkTurn").html();
-        var dice_result = Math.floor(Math.random() * 6)+1;
+        const dice_result = Math.floor(Math.random() * 6) + 1;
         $('#dice').attr('src', "img/dice" + dice_result + ".png").prop('disabled', true);
         $("#dice-text").html("You rolled: " + dice_result);
         $("#dice-text").css("visibility", "visible");
