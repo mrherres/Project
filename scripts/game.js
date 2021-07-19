@@ -167,12 +167,15 @@ function worker5() {
 
             if (data['information'].status === pturn) {
                 $("#dice").css("display", "inline");
-                $("#yourturn").html("Your turn!")
+                $("#yourturn").html(
+                    "<p>Your turn!</p>" +
+                    "<p>Click the dice to roll!</p>"
+                );
             }
             else{
                 $("#dice").hide().prop('disabled', false);
                 $("#dice-text").css("visibility", "hidden");
-                $("#yourturn").html("Opponent playing!")
+                $("#yourturn").html("Opponent playing!");
                 $(".round, .static_blue, .static_green, .static_yellow, .static_red").prop("disabled", true);
             }
             for (let i in data["finish"]){
