@@ -176,7 +176,7 @@ footer {
 
 #dice-text {
     width: auto;
-    text-align: center;
+    text-align: left;
     margin-top: 10px;
     font-weight: bold;
     color: darkgreen;
@@ -268,4 +268,13 @@ body {
     font-weight: bold;
     font-size: 25px;
     color: red;
+}
+
+#move-pawn {
+    margin-top: 10px;
+    width: auto;
+    text-align: left;
+    font-weight: bold;
+    color: darkgreen;
+    font-size: 25px;
 }

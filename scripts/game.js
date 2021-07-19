@@ -14,6 +14,7 @@ $(function() {
         $('#dice').attr('src', "img/dice" + dice_result + ".png").prop('disabled', true);
         $("#dice-text").html("You rolled: " + dice_result);
         $("#dice-text").css("visibility", "visible");
+        $("#move-pawn").css("visibility", "visible");
         $(".round, .static_blue, .static_green, .static_yellow, .static_red").prop("disabled", false);
         if(dice_result === 6){
             $("#six").css("visibility", "hidden")
@@ -175,6 +176,7 @@ function worker5() {
             else{
                 $("#dice").hide().prop('disabled', false);
                 $("#dice-text").css("visibility", "hidden");
+                $("#move-pawn").css("visibility", "hidden");
                 $("#yourturn").html("Opponent playing!");
                 $(".round, .static_blue, .static_green, .static_yellow, .static_red").prop("disabled", true);
             }

@@ -223,6 +223,9 @@ $getName = $_GET['name'];
     <div id="dice-text">
 
     </div>
+    <div id="move-pawn">
+        Click a pawn to move it!
+    </div>
     <div id="six">
         You need a six!
     </div>
