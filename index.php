@@ -49,7 +49,7 @@ include __DIR__ . '/tpl/body_start.php';
     <h1>Please enter your name</h1>
     <form name="myForm" id="form" action="index.php" method="get" novalidate>
         <label for="name">Name</label>
-        <input class="form-control" type="text" id="name" name="name" placeholder="Jan Jansen" required>
+        <input class="form-control" type="text" id="name" name="name" placeholder="Jan Jansen" required maxlength="10">
         <button class="btn btn-primary" type="submit">Submit</button>
     </form>
 
