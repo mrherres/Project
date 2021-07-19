@@ -3,7 +3,7 @@
 
 **How to run**
 
-Put the whole WP21Project folder in the htdocs folder. Run in webbrowser by opening http://localhost/WP21Project/
+Put the whole Project folder in the htdocs folder. Run in webbrowser by opening http://localhost/Project/
 
 
 **How to play**
