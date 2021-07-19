@@ -54,7 +54,7 @@ $getName = $_GET['name'];
         <input type="hidden" name="player" value="<?php echo $_GET["name"] ?>" style="display: none"/>
         <input type="submit" class="btn btn-danger" value="Click here if you want to reset yourself"/>
     </form>
-    <h1>
+    <h1 id="rules-header">
         How to play:
     </h1>
     <p>
@@ -66,6 +66,9 @@ $getName = $_GET['name'];
     </p>
     <p>
         You win the game when all four of your pawns have reached the finish.
+        You can reach the finish when a pawn lands on one of the three finishing places.
+        You can recognize your finish places by your color, light blue spots for team blue and light green spots for team green
+        If your pawn goes over all these
     </p>
 
 </div>

@@ -278,3 +278,14 @@ body {
     color: darkgreen;
     font-size: 25px;
 }
+
+#rules-header {
+    margin-top: 30px;
+}
+
+#rules {
+    margin-top: 150px;
+    margin-left: 30%;
+    margin-right: 10px;
+    width: auto;
+}

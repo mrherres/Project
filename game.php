@@ -230,3 +230,26 @@ $getName = $_GET['name'];
         You need a six!
     </div>
 </div>
+
+<div id="rules">
+    <h1>
+        How to play:
+    </h1>
+    <p>
+        Roll the dice by clicking it. You can only see the dice when it's your turn.
+    </p>
+    <p>
+        After rolling the dice, select the pawn you would like to move.
+        If you have no pawns on the board, you need to roll six first to get a pawn on the board.
+    </p>
+    <p>
+        You win the game when all four of your pawns have reached the finish.
+    </p>
+    <p>
+        You can reach the finish when a pawn lands on one of the three finishing places.
+    </p>
+    <p>
+        You can recognize your finish places by your color, light blue spots for team blue and light green spots for team green
+        If your pawn goes over all these
+    </p>
+</div>
