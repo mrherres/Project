@@ -231,10 +231,11 @@ $getName = $_GET['name'];
     </div>
 </div>
 
-<div id="rules">
-    <h1>
-        How to play:
+<div>
+    <h1 class="rules-header">
+        Hover over me to see the rules
     </h1>
+    <div id="rules">
     <p>
         Roll the dice by clicking it. You can only see the dice when it's your turn.
     </p>
@@ -252,4 +253,5 @@ $getName = $_GET['name'];
         You can recognize your finish places by your color, light blue spots for team blue and light green spots for team green
         If your pawn goes over all these
     </p>
+    </div>
 </div>

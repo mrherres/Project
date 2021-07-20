@@ -27,6 +27,11 @@ if($check["player1"]["name"] === $_POST["name"]){
             $check2["field"]["p".$POSB] = "empty";
         }
     }
+    else if ($check2["field"]["p".$NEXT] === "blue"){
+        $check2["field"]["p".$POSB] = "empty";
+        $check2["field"]["p".$NEXT] = "blue";
+        $check2["pawns"]["blue"] -= 1;
+    }
     else{
         $check2["field"]["p".$POSB] = "empty";
         $check2["field"]["p".$NEXT] = "blue";
@@ -73,7 +78,13 @@ else{
             $check2["finish"]["g4"] = "inG";
             $check2["field"]["p".$POSG] = "empty";
         }
-    } else{
+    }
+    else if ($check2["field"]["p".$NEXT] === "green"){
+        $check2["field"]["p".$POSG] = "empty";
+        $check2["field"]["p".$NEXT] = "green";
+        $check2["pawns"]["green"] -= 1;
+    }
+    else{
         $check2["field"]["p".$POSG] = "empty";
         $check2["field"]["p".$NEXT] = "green";
     }

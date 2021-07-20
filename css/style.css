@@ -271,6 +271,7 @@ body {
 }
 
 #move-pawn {
+    visibility: hidden;
     margin-top: 10px;
     width: auto;
     text-align: left;
@@ -279,13 +280,23 @@ body {
     font-size: 25px;
 }
 
-#rules-header {
-    margin-top: 30px;
-}
-
-#rules {
+.rules-header {
+    position: relative;
     margin-top: 150px;
     margin-left: 30%;
     margin-right: 10px;
+    width: 550px;
+}
+
+#rules {
+    display: none;
+    position: relative;
+    margin-left: 30%;
+    margin-right: 10px;
     width: auto;
+}
+
+.rules-header:hover + #rules {
+    display: block;
+    color: black;
 }
