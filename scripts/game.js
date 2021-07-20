@@ -18,7 +18,7 @@ $(function() {
         $(".round, .static_blue, .static_green, .static_yellow, .static_red").prop("disabled", false);
         if(dice_result === 6){
             $("#six").css("visibility", "hidden")
-            let request = $.ajax({
+            $.ajax({
                 url: "scripts/spawn.php",
                 method: "POST",
                 data: {
@@ -26,9 +26,6 @@ $(function() {
                     "name" : pname
                 },
                 dataType: "json"
-            });
-            request.done(function(data){
-                console.log(data);
             });
         }
         else if(playerturn === "1" && $(".pawnb").hasClass("inPlay")){
@@ -38,9 +35,8 @@ $(function() {
             console.log("Go on2");
         }
         else {
-            console.log("You need a 6");
             $("#six").css("visibility", "visible")
-            let request = $.ajax({
+            $.ajax({
                 url: "scripts/notSix.php",
                 method: "POST",
                 data: {
@@ -48,9 +44,6 @@ $(function() {
                     "name" : pname
                 },
                 dataType: "json"
-            });
-            request.done(function(data){
-                console.log(data);
             });
         }
     });
@@ -63,17 +56,14 @@ $(function() {
         const thrown = $("#dice-text").text();
         const throwns = thrown.slice(-1);
         const pname = urlParams.get('name');
-        const pturn = urlParams.get('turn');
         const playerturn = $("#checkTurn").html();
-        console.log(playerturn);
+        $("#dice-text").css("visibility", "hidden");
 
         let Pos = $(this).attr("id");
         if(playerturn === "1" && $(this).hasClass("pawnb")){
-            console.log(Pos.substring(1));
-            //console.log(throwns);
             let currentPosB = Pos.substring(1);
             let currentPosG = "00";
-            let request = $.ajax({
+            $.ajax({
                 url: "scripts/move.php",
                 method: "POST",
                 data: {
@@ -83,18 +73,12 @@ $(function() {
                     "posG": currentPosG
                 },
                 dataType: "json"
-            });
-            request.done(function (data) {
-                console.log(data);
             });
         }
         else if(playerturn === "2" && $(this).hasClass("pawng")){
-            let newPos = $(this).html();
-            console.log(newPos);
-            //console.log(throwns);
             let currentPosB = "00";
             let currentPosG = Pos.substring(1);
-            let request = $.ajax({
+            $.ajax({
                 url: "scripts/move.php",
                 method: "POST",
                 data: {
@@ -104,9 +88,6 @@ $(function() {
                     "posG": currentPosG
                 },
                 dataType: "json"
-            });
-            request.done(function (data) {
-                console.log(data);
             });
         }
     });
@@ -115,7 +96,6 @@ $(function() {
 $(function() {
     $('.reset-button').click(function () {
         $.get('scripts/reset.php', function (data) {
-            console.log(data)
         })
     });
 });
@@ -175,7 +155,6 @@ function worker5() {
             }
             else{
                 $("#dice").hide().prop('disabled', false);
-                $("#dice-text").css("visibility", "hidden");
                 $("#move-pawn").css("visibility", "hidden");
                 $("#yourturn").html("Opponent playing!");
                 $(".round, .static_blue, .static_green, .static_yellow, .static_red").prop("disabled", true);
@@ -199,16 +178,13 @@ function worker5() {
                 let item = data["field"][i];
                 if (item === "blue" && $("#"+i).hasClass("round_green pawng")) {
                     $("#"+i).addClass("round_blue pawnb inPlay").removeClass("round_green pawng");
-                    let request = $.ajax({
+                    $.ajax({
                         url: "scripts/throw.php",
                         method: "POST",
                         data: {
                             "color": item
                         },
                         dataType: "json"
-                    });
-                    request.done(function (data) {
-                        console.log(data);
                     });
                 }
                 else if (item === "blue") {
@@ -216,16 +192,13 @@ function worker5() {
                 }
                 else if (item === "green" && $("#"+i).hasClass("round_blue pawnb")){
                     $("#"+i).addClass("round_green pawng inPlay").removeClass("round_blue pawnb");
-                    let request = $.ajax({
+                    $.ajax({
                         url: "scripts/throw.php",
                         method: "POST",
                         data: {
                             "color": item
                         },
                         dataType: "json"
-                    });
-                    request.done(function (data) {
-                        console.log(data);
                     });
                 }
                 else if(item === "green") {
@@ -307,7 +280,4 @@ function worker4() {
         method: 'POST',
         dataType: "json"
     })
-        .done(function () {
-            console.log("yeet")
-        });
 }
