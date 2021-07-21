@@ -1,9 +1,13 @@
 $(function() {
-    setInterval(worker3, 400);
-    setInterval(worker4, 400);
-    setInterval(worker5, 400);
+    setInterval(worker3, 200);
+    setInterval(worker4, 200);
+    setInterval(worker5, 200);
 });
 
+// This function lets the player roll the dice.
+// When the result is not 6 and there are no active pawns on the board from that player,
+// the turn will be passed on. Otherwise, if they throw 6 but there are still pawns to be spawned,
+// the game will automatically spawn a new pawn, if possible.
 $(function() {
     $('#dice').click(function () {
         const abba = window.location.search;
@@ -29,10 +33,10 @@ $(function() {
             });
         }
         else if(playerturn === "1" && $(".pawnb").hasClass("inPlay")){
-            console.log("Go on1");
+            // Statement is empty, since the player may now move a pawn
         }
         else if(playerturn === "2" && $(".pawng").hasClass("inPlay")) {
-            console.log("Go on2");
+            // Statement is empty, since the player may now move a pawn
         }
         else {
             $("#six").css("visibility", "visible")
@@ -49,6 +53,7 @@ $(function() {
     });
 });
 
+// This function is to make sure that the player can move their pawn, but only their pawns.
 $(function() {
     $('.round, .static_blue, .static_green, .static_red, .static_yellow').click(function () {
         const abba = window.location.search;
@@ -93,6 +98,7 @@ $(function() {
     });
 });
 
+// Function to reset the whole game, e.g. all json files.
 $(function() {
     $('.reset-button').click(function () {
         $.get('scripts/reset.php', function (data) {

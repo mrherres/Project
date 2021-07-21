@@ -13,6 +13,4 @@ else{
 $json_object = json_encode($check2, JSON_PRETTY_PRINT);
 file_put_contents('../data/gamestate.json', $json_object);
 
-#$newdata = ['prev' => $POSB,'max' => $NEXT];
 header("Content-Type: application/json");
-#echo json_encode($newdata);

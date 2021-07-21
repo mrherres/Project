@@ -1,20 +1,8 @@
 <?php
-/* Header */
 $page_title = 'Mens Erger Je Niet';
-#$navigation = Array(
-#'active' => 'Main',
-#'items' => Array(
-#'Simple Form' => '/Project/index.php'
-#)
-#);
 include __DIR__ . '/tpl/headG.php';
-#include __DIR__ . '/tpl/body_start.php';
 $getName = $_GET['name'];
 ?>
-
-<!--</div>
-#</div>
-#</div> -->
 
 <div class="reset-button btn btn-danger" id="reset" type="button">
     Reset game
@@ -194,18 +182,8 @@ $getName = $_GET['name'];
         <tr>
             <th>Wins</th>
             <td id="wins1">
-                <?
-                $checkFile = file_get_contents("data/players.json");
-                $check = json_decode($checkFile, true);
-                echo $check["player1"]["wins"]
-                ?>
             </td>
             <td id="wins2">
-                <?
-                $checkFile = file_get_contents("data/players.json");
-                $check = json_decode($checkFile, true);
-                echo $check["player2"]["wins"]
-                ?>
             </td>
         </tr>
     </table>

@@ -1,12 +1,5 @@
 <?php
-/* Header */
 $page_title = 'Mens Erger Je Niet';
-#$navigation = Array(
-    #'active' => 'Main',
-    #'items' => Array(
-        #'Simple Form' => '/Project/index.php'
-    #)
-#);
 include __DIR__ . '/tpl/head.php';
 include __DIR__ . '/tpl/body_start.php';
 $getName = $_GET['name'];

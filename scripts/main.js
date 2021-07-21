@@ -2,6 +2,8 @@ $(function() {
     setInterval(worker1, 200);
 });
 
+// This function will update all the information about the players on the homescreen.
+// It also redirects the players to the correct page for playing the game.
 function worker1() {
     $.ajax({
         url: 'scripts/getPlayers.php',
@@ -40,10 +42,10 @@ function worker1() {
             }})
         }
 
+// This function is used to reset all data from one player, e.g. all corresponding json information
 $(function() {
     $('.reset-button').click(function () {
-        $.get('scripts/resetPlayer.php', function (data) {
-            console.log(data)
+        $.get('scripts/resetPlayer.php', function () {
         })
     });
 });

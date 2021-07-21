@@ -1,12 +1,3 @@
-<?php
-// P_Print function
-function p_print($array){
-    echo "<pre>";
-    print_r($array);
-    echo "</pre>";
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
