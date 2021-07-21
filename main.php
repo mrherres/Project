@@ -26,22 +26,12 @@ $getName = $_GET['name'];
             <td id="player1Name"></td>
             <td id="status1"></td>
             <td id="wins1">
-                <?
-                $checkFile = file_get_contents("data/players.json");
-                $check = json_decode($checkFile, true);
-                echo $check["player1"]["wins"]
-                ?>
             </td>
         </tr>
         <tr>
             <td id="player2Name"></td>
             <td id="status2"></td>
             <td id="wins2">
-                <?
-                $checkFile = file_get_contents("data/players.json");
-                $check = json_decode($checkFile, true);
-                echo $check["player2"]["wins"]
-                ?>
             </td>
         </tr>
     </table>
@@ -67,8 +57,8 @@ $getName = $_GET['name'];
     <p>
         You win the game when all four of your pawns have reached the finish.
         You can reach the finish when a pawn lands on one of the three finishing places.
-        You can recognize your finish places by your color, light blue spots for team blue and light green spots for team green
-        If your pawn goes over all these
+        You can recognize your finish places by your color, light blue spots for team blue and light green spots for team green.
+        If your pawn goes past all these places, you unfortunately have to do another round!
     </p>
 
 </div>

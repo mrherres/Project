@@ -250,8 +250,8 @@ $getName = $_GET['name'];
         You can reach the finish when a pawn lands on one of the three finishing places.
     </p>
     <p>
-        You can recognize your finish places by your color, light blue spots for team blue and light green spots for team green
-        If your pawn goes over all these
+        You can recognize your finish places by your color, light blue spots for team blue and light green spots for team green.
+        If your pawn goes past all these places, you unfortunately have to do another round!
     </p>
     </div>
 </div>

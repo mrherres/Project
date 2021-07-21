@@ -14,6 +14,8 @@ function worker1() {
             const pname = urlParams.get('name');
             $('#player1Name').html(data["player1"].name);
             $('#player2Name').html(data["player2"].name);
+            $("#wins1").html(data["player1"]["wins"]);
+            $("#wins2").html(data["player2"]["wins"]);
             if (data["player1"].status === "unready") {
                 $("#status1").empty();
                 $("#status1").html('<button class="btn btn-danger" disabled>Not Ready</button>');
